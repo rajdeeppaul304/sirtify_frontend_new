@@ -73,13 +73,19 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-bold text-gray-800 mb-6">Legal</h4>
             <div className="space-y-3">
-              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+              {/* <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
                 Terms & Conditions
+              </a> */}
+              <a href="cancellation-policy" className="block text-gray-600 hover:text-gray-800 transition-colors">
+                Cancellation Policy
               </a>
-              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+              <a href="cookies-policy" className="block text-gray-600 hover:text-gray-800 transition-colors">
+                Cookies Policy
+              </a>
+              <a href="privacy-policy" className="block text-gray-600 hover:text-gray-800 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+              <a href="refund-policy" className="block text-gray-600 hover:text-gray-800 transition-colors">
                 Refunds
               </a>
             </div>

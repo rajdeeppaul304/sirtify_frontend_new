@@ -28,15 +28,22 @@ export const Header = () => {
   };
 
   return (
-      <nav className="bg-background pl-[50px] pr-[60px] py-3 flex justify-between items-center">
+    <>
+      {/* Fixed Header */}
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50 px-4 sm:px-8 lg:px-[50px] lg:pr-[60px] py-3 flex justify-between items-center">
         {/* Logo */}
+        <div className="flex items-center">
+          <img 
+            width={60} 
+            height={60} 
+            className="sm:w-[70px] sm:h-[70px] lg:w-[86px] lg:h-[86px]" 
+            src="/assets/logo.png" 
+            alt="Sirtify Logo" 
+          />
+        </div>
 
-        <img width={86} height={86} src="/assets/logo.png" alt="Sirtify Logo" />
-        
-        
-
-        {/* Navigation */}
-        <div className="hidden md:flex items-center gap-8 font-open-sans text-[1rem] text-black font-normal">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-8 font-open-sans text-[1rem] text-black font-normal">
           {NAVIGATION_ITEMS.map((item) => {
             const isActive = currentPath === item.href;
             
@@ -85,18 +92,111 @@ export const Header = () => {
             );
           })}
           
-          {/* Auth Buttons */}
+          {/* Desktop Auth Buttons */}
           <div className="flex items-center gap-3">
-            <button className="px-5 py-2.5  text-orange-500 rounded-lg text-sm font-medium bg-white cursor-pointer transition-colors font-inter">
+            <button className="px-5 py-2.5 text-orange-500 rounded-lg text-sm font-medium bg-white border border-orange-200 hover:bg-orange-50 cursor-pointer transition-colors font-inter">
               Login
             </button>
             <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
               Sign Up
             </button>
           </div>
-
         </div>
 
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 text-gray-700 hover:text-orange-500 transition-colors"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setMobileMenuOpen(false)} />
+      )}
+
+      {/* Mobile Menu */}
+      <div className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${
+        mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      } lg:hidden`}>
+        
+        {/* Mobile Menu Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 flex-shrink-0">
+          <img width={60} height={60} src="/assets/logo.png" alt="Sirtify Logo" />
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="p-2 text-gray-700 hover:text-orange-500 transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Mobile Navigation Items - Scrollable */}
+        <div className="flex flex-col flex-1 overflow-y-auto py-4">
+          {NAVIGATION_ITEMS.map((item) => {
+            const isActive = currentPath === item.href;
+            
+            return (
+              <div key={item.label}>
+                {item.hasDropdown ? (
+                  <div>
+                    <button 
+                      onClick={() => setMoreOpen(!moreOpen)}
+                      className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-orange-50 hover:text-orange-500 transition-colors"
+                    >
+                      <span className="font-open-sans text-base">{item.label}</span>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {moreOpen && item.dropdownItems && (
+                      <div className="bg-gray-50">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <a
+                            key={dropdownItem.label}
+                            href={dropdownItem.href}
+                            className="block pl-12 pr-6 py-3 text-sm hover:bg-orange-50 hover:text-orange-500 transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {dropdownItem.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleNavigation(item.href)}
+                    className={`w-full text-left px-6 py-4 hover:bg-orange-50 hover:text-orange-500 transition-colors font-open-sans text-base ${
+                      isActive ? "text-orange-500 bg-orange-50 font-bold border-r-2 border-orange-500" : "font-normal"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Auth Buttons */}
+        <div className="p-6 border-t border-gray-200 bg-white flex-shrink-0">
+          <div className="flex flex-col gap-3">
+            <button className="w-full px-5 py-3 text-orange-500 border border-orange-500 rounded-lg text-base font-medium hover:bg-orange-50 transition-colors font-inter">
+              Login
+            </button>
+            <button className="w-full px-5 py-3 bg-orange-500 text-white rounded-lg text-base font-medium hover:bg-orange-600 transition-colors font-inter hover:shadow-xl">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Spacer to prevent content from going under fixed header */}
+      <div className="h-[72px] sm:h-[78px] lg:h-[102px]" />
+    </>
   );
 };
