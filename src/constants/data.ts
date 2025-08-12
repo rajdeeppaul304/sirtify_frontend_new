@@ -18,7 +18,7 @@ import type {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "#programs" },
+  { label: "Programs", href: "/program" },
   { label: "Learners", href: "/learners" },
   { label: "Certifications", href: "/certifications" },
   {
@@ -36,6 +36,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
             { label: "Contact Us", href: "/contact" },
             // { label: "FAQ", href: "/faq" },         
            ],
+
+
   },
 ];
 
@@ -160,42 +162,42 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 
 export const CERTIFICATIONS = [
   {
-    id: 'aws',
-    name: 'aws',
-    logo: '/assets/cert1.png',
-    color: 'text-black'
+    id: "aws",
+    name: "aws",
+    logo: "/assets/cert1.png",
+    color: "text-black",
   },
   {
-    id: 'cloudera',
-    name: 'CLOUDERA',
-    logo: '/assets/cert2.png',
-    color: 'text-orange-500'
+    id: "cloudera",
+    name: "CLOUDERA",
+    logo: "/assets/cert2.png",
+    color: "text-orange-500",
   },
   {
-    id: 'uipath',
-    name: 'UiPath',
-    logo: '/assets/cert3.png',
-    color: 'text-orange-500'
+    id: "uipath",
+    name: "UiPath",
+    logo: "/assets/cert3.png",
+    color: "text-orange-500",
   },
   {
-    id: 'blueprism',
-    name: 'blueprism',
-    logo: '/assets/cert4.png',
-    color: 'text-blue-600'
-  }
+    id: "blueprism",
+    name: "blueprism",
+    logo: "/assets/cert4.png",
+    color: "text-blue-600",
+  },
 ];
 
 export const ACADEMIC_PARTNERS = [
   {
-    id: 'aws-academic',
-    name: 'aws',
-    logo: '/assets/cert1.svg',
-    color: 'text-black'
+    id: "aws-academic",
+    name: "aws",
+    logo: "/assets/cert1.svg",
+    color: "text-black",
   },
   {
-    id: 'cloudera-academic',
-    name: 'CLOUDERA',
-    logo: '/assets/cert2.png',
-    color: 'text-orange-500'
-  }
+    id: "cloudera-academic",
+    name: "CLOUDERA",
+    logo: "/assets/cert2.png",
+    color: "text-orange-500",
+  },
 ];
