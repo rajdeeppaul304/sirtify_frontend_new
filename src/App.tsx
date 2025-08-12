@@ -12,6 +12,7 @@ import {
   Footer
 } from "./components";
 import { AboutUs } from "./pages/AboutUs";
+import { LearnersPage } from "./pages/LearnersPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -37,6 +38,10 @@ export default function App() {
 
   if (currentPath === '/about') {
     return <AboutUs />;
+  }
+  
+  if (currentPath === '/learners') {
+    return <LearnersPage />;
   }
   
   // Default landing page

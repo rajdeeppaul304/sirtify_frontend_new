@@ -11,10 +11,20 @@ export { CertificationsSection } from './sections/CertificationsSection';
 export { PartnersSection } from './sections/PartnersSection';
 export { PartnersRecognitionSection } from './sections/PartnersRecognitionSection';
 export { ImpactNumbersSection } from './sections/ImpactNumbersSection';
+export { WhoCanJoinSection } from './sections/WhoCanJoinSection';
+export { LearnersHeroSection } from './sections/LearnersHeroSection';
+export { ToolsSection } from './sections/ToolsSection';
+export { PortfolioCertificationSection } from './sections/PortfolioCertificationSection';
+export { LearningJourneySection } from './sections/LearningJourneySection';
+export { TestimonialsSection } from './sections/TestimonialsSection';
+export { CTABannerSection } from './sections/CTABannerSection';
 
 // UI Components
 export { Button } from './ui/Button';
 export { Card } from './ui/Card';
 export { SuccessStoryCard } from './ui/SuccessStoryCard';
 export { RotatingGlobe } from './ui/RotatingGlobe';
+
+// Pages
+export { LearnersPage } from '../pages/LearnersPage';
  
