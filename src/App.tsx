@@ -1,4 +1,4 @@
-import { Header, HeroSection, AboutSection, ProgramTracksSection, SuccessStoriesSection } from './components';
+import { Header, HeroSection, AboutSection, ProgramTracksSection, SuccessStoriesSection, CertificationsSection, PartnersSection, PartnersRecognitionSection, ImpactNumbersSection, Footer } from './components';
 
 export default function App() {
   return (
@@ -8,6 +8,11 @@ export default function App() {
       <AboutSection />
       <ProgramTracksSection />
       <SuccessStoriesSection />
-    </div>
+              <CertificationsSection />
+        <PartnersSection />
+        <PartnersRecognitionSection />
+        <ImpactNumbersSection />
+        <Footer />
+      </div>
   );
 }

@@ -131,3 +131,45 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     image: '/assets/success3.jpg'
   }
 ];
+
+export const CERTIFICATIONS = [
+  {
+    id: 'aws',
+    name: 'aws',
+    logo: '/assets/cert1.png',
+    color: 'text-black'
+  },
+  {
+    id: 'cloudera',
+    name: 'CLOUDERA',
+    logo: '/assets/cert2.png',
+    color: 'text-orange-500'
+  },
+  {
+    id: 'uipath',
+    name: 'UiPath',
+    logo: '/assets/cert3.png',
+    color: 'text-orange-500'
+  },
+  {
+    id: 'blueprism',
+    name: 'blueprism',
+    logo: '/assets/cert4.png',
+    color: 'text-blue-600'
+  }
+];
+
+export const ACADEMIC_PARTNERS = [
+  {
+    id: 'aws-academic',
+    name: 'aws',
+    logo: '/assets/cert1.svg',
+    color: 'text-black'
+  },
+  {
+    id: 'cloudera-academic',
+    name: 'CLOUDERA',
+    logo: '/assets/cert2.png',
+    color: 'text-orange-500'
+  }
+];
