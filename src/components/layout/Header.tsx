@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../../constants/data";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [moreOpen, setMoreOpen] = useState(false);
@@ -24,31 +25,15 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-[#FEF7F1] shadow-sm">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="bg-background pl-[50px] pr-[60px] py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md overflow-hidden">
-            <img
-              src="/assets/logo.png"
-              alt="Sirtifai Logo"
-              className="w-8 h-8 object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const fallback = target.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
-            <div className="w-8 h-8 bg-orange-500 rounded-md flex items-center justify-center text-white font-bold text-sm hidden">
-              S
-            </div>
-          </div>
-          {/* <span className="text-xl font-bold text-gray-800">SPP</span> */}
-        </div>
+
+        <img width={86} height={86} src="/assets/logo.png" alt="Sirtify Logo" />
+        
+        
 
         {/* Navigation */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <div className="hidden md:flex items-center gap-8 font-open-sans text-[1rem] text-black font-normal">
           {NAVIGATION_ITEMS.map((item) => {
             const isActive = currentPath === item.href;
             
@@ -84,7 +69,7 @@ export const Header = () => {
                   <button
                     onClick={() => handleNavigation(item.href)}
                     className={`hover:text-orange-500 transition-colors cursor-pointer ${
-                      isActive ? "text-orange-500 font-semibold relative" : ""
+                      isActive ? "text-orange-500 relative font-bold" : "font-normal"
                     }`}
                   >
                     {item.label}
@@ -96,18 +81,19 @@ export const Header = () => {
               </div>
             );
           })}
+          
+          {/* Auth Buttons */}
+          <div className="flex items-center gap-3">
+            <button className="px-5 py-2.5  text-orange-500 rounded-lg text-sm font-medium bg-white cursor-pointer transition-colors font-inter">
+              Login
+            </button>
+            <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
+              Sign Up
+            </button>
+          </div>
+
         </div>
 
-        {/* Auth Buttons */}
-        <div className="flex items-center gap-3">
-          <button className="px-5 py-2 border border-orange-500 text-orange-500 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors">
-            Login
-          </button>
-          <button className="px-6 py-2 bg-orange-500 text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl">
-            Sign Up
-          </button>
-        </div>
       </nav>
-    </header>
   );
 };
