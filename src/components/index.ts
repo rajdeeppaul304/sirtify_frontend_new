@@ -29,6 +29,11 @@ export { ComprehensiveVisaSupport } from './sections/ComprehensiveVisaSupport';
 export { RealSuccessStories } from './sections/RealSuccessStories';
 export { OptionalAddOns } from './sections/OptionalAddOns';
 export { SuccessStoryCTABanner } from './sections/SuccessStoryCTABanner';
+export { ContactSupportSection } from './sections/ContactSupportSection';
+export { ContactFeaturesBanner } from './sections/ContactFeaturesBanner';
+export { EmailSupportSection } from './sections/EmailSupportSection';
+export { PhoneSupportSection } from './sections/PhoneSupportSection';
+export { SupportServicesSection } from './sections/SupportServicesSection';
 
 // UI Components
 export { Button } from './ui/Button';
@@ -40,3 +45,4 @@ export { RotatingGlobe } from './ui/RotatingGlobe';
 export { LearnersPage } from '../pages/LearnersPage';
 export { CertificationsPage } from '../pages/CertificationsPage';
 export { SirtifyInternationalPage } from '../pages/SirtifyInternationalPage';
+export { ContactUsPage } from '../pages/ContactUsPage';

@@ -25,11 +25,12 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     label: "More",
     href: "#",
     hasDropdown: true,
-    dropdownItems: [
-      { label: "Blog", href: "#blog" },
-      { label: "Careers", href: "#careers" },
-      { label: "Sirtify International", href: "/sirtify-international" },
-    ],
+              dropdownItems: [
+            { label: "Blog", href: "#blog" },
+            { label: "Careers", href: "#careers" },
+            { label: "Sirtify International", href: "/sirtify-international" },
+            { label: "Contact Us", href: "/contact" },
+          ],
   },
 ];
 

@@ -15,6 +15,7 @@ import { AboutUs } from "./pages/AboutUs";
 import { LearnersPage } from "./pages/LearnersPage";
 import { CertificationsPage } from "./pages/CertificationsPage";
 import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
+import { ContactUsPage } from "./pages/ContactUsPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -41,19 +42,23 @@ export default function App() {
   if (currentPath === '/about') {
     return <AboutUs />;
   }
-  
-          if (currentPath === '/learners') {
-          return <LearnersPage />;
-        }
 
-        if (currentPath === '/certifications') {
-          return <CertificationsPage />;
-        }
+  if (currentPath === '/learners') {
+    return <LearnersPage />;
+  }
 
-        if (currentPath === '/sirtify-international') {
-          return <SirtifyInternationalPage />;
-        }
-  
+  if (currentPath === '/certifications') {
+    return <CertificationsPage />;
+  }
+
+  if (currentPath === '/sirtify-international') {
+    return <SirtifyInternationalPage />;
+  }
+
+  if (currentPath === '/contact') {
+    return <ContactUsPage />;
+  }
+
   // Default landing page
   return (
     <div className="bg-[#FEF7F1] font-sans min-h-screen overflow-x-hidden">
