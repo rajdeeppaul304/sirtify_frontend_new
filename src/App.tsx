@@ -14,6 +14,7 @@ import {
 import { AboutUs } from "./pages/AboutUs";
 import { LearnersPage } from "./pages/LearnersPage";
 import { CertificationsPage } from "./pages/CertificationsPage";
+import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -47,6 +48,10 @@ export default function App() {
 
         if (currentPath === '/certifications') {
           return <CertificationsPage />;
+        }
+
+        if (currentPath === '/sirtify-international') {
+          return <SirtifyInternationalPage />;
         }
   
   // Default landing page

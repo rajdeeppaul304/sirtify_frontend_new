@@ -22,6 +22,13 @@ export { CertificationsHeroSection } from './sections/CertificationsHeroSection'
 export { NSQFCredibilitySection } from './sections/NSQFCredibilitySection';
 export { CertificationsToolsSection } from './sections/CertificationsToolsSection';
 export { SkillsProofBanner } from './sections/SkillsProofBanner';
+export { InternationalHeroSection } from './sections/InternationalHeroSection';
+export { GlobalCareerRoadmap } from './sections/GlobalCareerRoadmap';
+export { InternationalPricingPlans } from './sections/InternationalPricingPlans';
+export { ComprehensiveVisaSupport } from './sections/ComprehensiveVisaSupport';
+export { RealSuccessStories } from './sections/RealSuccessStories';
+export { OptionalAddOns } from './sections/OptionalAddOns';
+export { SuccessStoryCTABanner } from './sections/SuccessStoryCTABanner';
 
 // UI Components
 export { Button } from './ui/Button';
@@ -32,3 +39,4 @@ export { RotatingGlobe } from './ui/RotatingGlobe';
 // Pages
 export { LearnersPage } from '../pages/LearnersPage';
 export { CertificationsPage } from '../pages/CertificationsPage';
+export { SirtifyInternationalPage } from '../pages/SirtifyInternationalPage';
