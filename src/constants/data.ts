@@ -20,6 +20,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "About", href: "/about" },
   { label: "Programs", href: "#programs" },
   { label: "Learners", href: "/learners" },
+  { label: "Certifications", href: "/certifications" },
   {
     label: "More",
     href: "#",

@@ -13,6 +13,7 @@ import {
 } from "./components";
 import { AboutUs } from "./pages/AboutUs";
 import { LearnersPage } from "./pages/LearnersPage";
+import { CertificationsPage } from "./pages/CertificationsPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -40,9 +41,13 @@ export default function App() {
     return <AboutUs />;
   }
   
-  if (currentPath === '/learners') {
-    return <LearnersPage />;
-  }
+          if (currentPath === '/learners') {
+          return <LearnersPage />;
+        }
+
+        if (currentPath === '/certifications') {
+          return <CertificationsPage />;
+        }
   
   // Default landing page
   return (

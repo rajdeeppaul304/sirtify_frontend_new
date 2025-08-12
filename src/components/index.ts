@@ -18,6 +18,10 @@ export { PortfolioCertificationSection } from './sections/PortfolioCertification
 export { LearningJourneySection } from './sections/LearningJourneySection';
 export { TestimonialsSection } from './sections/TestimonialsSection';
 export { CTABannerSection } from './sections/CTABannerSection';
+export { CertificationsHeroSection } from './sections/CertificationsHeroSection';
+export { NSQFCredibilitySection } from './sections/NSQFCredibilitySection';
+export { CertificationsToolsSection } from './sections/CertificationsToolsSection';
+export { SkillsProofBanner } from './sections/SkillsProofBanner';
 
 // UI Components
 export { Button } from './ui/Button';
@@ -27,4 +31,4 @@ export { RotatingGlobe } from './ui/RotatingGlobe';
 
 // Pages
 export { LearnersPage } from '../pages/LearnersPage';
- 
+export { CertificationsPage } from '../pages/CertificationsPage';
