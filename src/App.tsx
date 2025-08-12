@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Header,
   HeroSection,
@@ -13,9 +14,27 @@ import {
 import { AboutUs } from "./pages/AboutUs";
 
 export default function App() {
-  // Simple routing logic for single page app
-  const currentPath = window.location.pathname;
-  
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = (path: string) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+  };
+
+  // Expose navigateTo globally for Header component
+  useEffect(() => {
+    (window as any).navigateTo = navigateTo;
+  }, []);
+
   if (currentPath === '/about') {
     return <AboutUs />;
   }

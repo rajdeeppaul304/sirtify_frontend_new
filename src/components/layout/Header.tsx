@@ -8,7 +8,12 @@ export const Header = () => {
 
   const handleNavigation = (href: string) => {
     if (href.startsWith('/')) {
-      window.location.pathname = href;
+      // Use the global navigateTo function if available, otherwise fallback
+      if ((window as any).navigateTo) {
+        (window as any).navigateTo(href);
+      } else {
+        window.location.pathname = href;
+      }
     } else if (href.startsWith('#')) {
       // Handle anchor links
       const element = document.querySelector(href);
@@ -98,7 +103,7 @@ export const Header = () => {
           <button className="px-5 py-2 border border-orange-500 text-orange-500 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors">
             Login
           </button>
-          <button className="px-5 py-2 bg-orange-500 text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl">
+          <button className="px-6 py-2 bg-orange-500 text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl">
             Sign Up
           </button>
         </div>
