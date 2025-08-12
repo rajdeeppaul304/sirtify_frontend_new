@@ -15,7 +15,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'basic',
     title: 'Basic',
-    price: '$59,000',
+    price: '$675',
     description: 'Essential support for your international career journey',
     includedFeatures: [
       'Complete skill development program',
@@ -33,7 +33,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'pro',
     title: 'Pro',
-    price: '$1,18,000',
+    price: '$1345',
     description: 'Enhanced support with job sourcing and interview preparation',
     includedFeatures: [
       'Everything in Basic plan',
@@ -52,7 +52,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'elite',
     title: 'Elite',
-    price: '$1,77,000',
+    price: '$2020',
     description: 'Comprehensive support from training to relocation',
     includedFeatures: [
       'Everything in Pro plan',

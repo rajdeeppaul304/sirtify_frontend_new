@@ -1,4 +1,18 @@
-import React from 'react';
+import React from "react";
+import {
+  FaGraduationCap,
+  FaBriefcase,
+  FaCertificate,
+  FaFileAlt,
+  FaProjectDiagram,
+  FaMoneyBillWave,
+  FaComments,
+  FaLanguage,
+  FaGlobeAmericas,
+  FaPassport,
+  FaPlaneDeparture,
+  FaHandsHelping,
+} from "react-icons/fa";
 
 export const GlobalCareerRoadmap = () => {
   return (
@@ -9,7 +23,6 @@ export const GlobalCareerRoadmap = () => {
           margin: 0 auto;
           padding: 20px;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          // background-color: #f8f9fa;
           min-height: 100vh;
         }
 
@@ -72,10 +85,17 @@ export const GlobalCareerRoadmap = () => {
         }
 
         .phase-icon {
-          width: 20px;
-          height: 20px;
+          font-size: 20px;
+          color: #ff6b35;
           margin-right: 12px;
           flex-shrink: 0;
+        }
+
+        .milestone-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100%;
         }
 
         .milestone-section {
@@ -86,51 +106,7 @@ export const GlobalCareerRoadmap = () => {
           border: 1px solid #e2e8f0;
           position: relative;
           z-index: 2;
-        }
-
-        .milestone-section::before {
-          content: '';
-          position: absolute;
-          left: -45px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 50px;
-          height: 50px;
-          background: #ff6b35;
-          border-radius: 50%;
-          border: 4px solid white;
-          box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-          z-index: 3;
-        }
-
-        .milestone-section.phase-1::before {
-          content: '1';
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-size: 24px;
-          font-weight: 700;
-        }
-
-        .milestone-section.phase-2::before {
-          content: '2';
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-size: 24px;
-          font-weight: 700;
-        }
-
-        .milestone-section.phase-3::before {
-          content: '3';
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-size: 24px;
-          font-weight: 700;
+          width: 100%;
         }
 
         .milestone-title {
@@ -186,158 +162,114 @@ export const GlobalCareerRoadmap = () => {
           font-weight: 600;
           font-size: 15px;
         }
-
-        /* Icon styles */
-        .icon-graduation { background: #ff6b35; }
-        .icon-portfolio { background: #3182ce; }
-        .icon-certificate { background: #e53e3e; }
-        .icon-resume { background: #ed8936; }
-        .icon-project { background: #38a169; }
-        .icon-money { background: #d69e2e; }
-        .icon-interview { background: #805ad5; }
-        .icon-language { background: #e53e3e; }
-        .icon-placement { background: #3182ce; }
-        .icon-visa { background: #ed8936; }
-        .icon-relocation { background: #38a169; }
-        .icon-support { background: #e53e3e; }
       `}</style>
-      
+
       <div className="roadmap-container">
         <h1 className="roadmap-title">18-Month Global Career Roadmap</h1>
-        
+
         <div className="roadmap-timeline">
           <div className="timeline-line"></div>
-          
+
           {/* Row 1 */}
           <div className="phase-card">
             <h2 className="phase-title">Months 1-9: Skill Development</h2>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-graduation"></div>
+              <FaGraduationCap className="phase-icon" />
               Industry-focused skill training with global standards
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-portfolio"></div>
+              <FaBriefcase className="phase-icon" />
               Portfolio development with international projects
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-certificate"></div>
+              <FaCertificate className="phase-icon" />
               NSQF certification and global skill assessment
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-resume"></div>
+              <FaFileAlt className="phase-icon" />
               International resume preparation
             </div>
           </div>
-          
-          <div className="milestone-section phase-1">
-            <h3 className="milestone-title">Key Milestones:</h3>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Complete skill certification
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Build international portfolio
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Global resume preparation
+
+          <div className="milestone-container">
+            <div className="milestone-section">
+              <h3 className="milestone-title">Key Milestones:</h3>
+              <div className="milestone-item"><div className="milestone-check"></div>Complete skill certification</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Build international portfolio</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Global resume preparation</div>
             </div>
           </div>
 
           {/* Row 2 */}
+          <div className="milestone-container">
+            <div className="milestone-section">
+              <h3 className="milestone-title">Key Milestones:</h3>
+              <div className="milestone-item"><div className="milestone-check"></div>Real client project experience</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Earn while you prepare</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Mock interviews with global companies</div>
+            </div>
+          </div>
+
           <div className="phase-card">
             <h2 className="phase-title">Months 10-15: Practice Phase</h2>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-project"></div>
+              <FaProjectDiagram className="phase-icon" />
               Real client projects with international exposure
             </div>
-            
+
             <div className="earning-highlight">
               <div className="earning-text">
                 Earn ₹15K-₹35K/month while preparing for global roles
               </div>
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-interview"></div>
+              <FaComments className="phase-icon" />
               Global interview preparation and mock sessions
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-language"></div>
+              <FaLanguage className="phase-icon" />
               Cultural and language preparation for target countries
-            </div>
-          </div>
-          
-          <div className="milestone-section phase-2">
-            <h3 className="milestone-title">Key Milestones:</h3>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Real client project experience
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Earn while you prepare
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Mock interviews with global companies
             </div>
           </div>
 
           {/* Row 3 */}
           <div className="phase-card">
             <h2 className="phase-title">Months 16-18: Progress to Global Placement</h2>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-placement"></div>
+              <FaGlobeAmericas className="phase-icon" />
               Direct placement with international employers
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-visa"></div>
+              <FaPassport className="phase-icon" />
               Complete visa application support
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-relocation"></div>
+              <FaPlaneDeparture className="phase-icon" />
               Relocation assistance and guidance
             </div>
-            
+
             <div className="phase-item">
-              <div className="phase-icon icon-support"></div>
+              <FaHandsHelping className="phase-icon" />
               Continuous support during initial months abroad
             </div>
           </div>
-          
-          <div className="milestone-section phase-3">
-            <h3 className="milestone-title">Key Milestones:</h3>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              International job offer
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Successful visa application
-            </div>
-            
-            <div className="milestone-item">
-              <div className="milestone-check"></div>
-              Smooth relocation process
+
+          <div className="milestone-container">
+            <div className="milestone-section">
+              <h3 className="milestone-title">Key Milestones:</h3>
+              <div className="milestone-item"><div className="milestone-check"></div>International job offer</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Successful visa application</div>
+              <div className="milestone-item"><div className="milestone-check"></div>Smooth relocation process</div>
             </div>
           </div>
         </div>
@@ -345,5 +277,3 @@ export const GlobalCareerRoadmap = () => {
     </>
   );
 };
-
-// export default CareerRoadmap;
