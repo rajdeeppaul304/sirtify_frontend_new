@@ -7,13 +7,13 @@ export const HeroSection = () => {
   return (
     <div className='w-full flex justify-between items-start pt-[100px] overflow-hidden'>
       {/* Text Content */}
-      <div className="relative w-full lg:max-w-[800px] lg:mx-10 flex flex-col justify-start items-start gap-10">
+      <div className="relative w-full lg:max-w-[700px] lg:mx-10 flex flex-col justify-start items-start gap-10">
         
         <div className='relative'>
           <img className='absolute w-[50px] h-[50px]' src={star} alt="Star" />
         </div>
 
-        <h1 className="text-[4rem] lg:text-[5rem] leading-[100%] font-semibold font-open-sans text-black">
+        <h1 className="text-[4rem] lg:text-[4.5rem] leading-[100%] font-semibold font-open-sans text-black">
           Unlock Your Potential Launch Your <span className='text-[#FE7642]'>Career</span>
         </h1>
         <div className='flex flex-col md:flex-row justify-start gap-[18px] items-center'>
@@ -28,7 +28,7 @@ export const HeroSection = () => {
             
           </div>
 
-          <p className="text-[#b1ada9] font-inter font-normal text-[.875rem] leading-[136%] w-[50%]">
+          <p className="text-[#b1ada9] font-inter font-normal text-[.875rem] leading-[136%] w-[34%]">
             Accelerate Your Growth with Hands-on Projects and Personalised Career Support from Start to Success.
           </p>
 
