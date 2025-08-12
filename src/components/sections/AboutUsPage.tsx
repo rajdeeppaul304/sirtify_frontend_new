@@ -44,6 +44,7 @@ const industries = [
   "BFSI",
 ];
 
+import  { AboutSection } from "./AboutSection";
 
 
 export const AboutUsPage = () => {
@@ -320,6 +321,8 @@ export const AboutUsPage = () => {
 </section>
 
 {/* <MissionVisionGoals/> */}
+
+<AboutSection/>
 
 <UpcomingProjectsHero/>
 
