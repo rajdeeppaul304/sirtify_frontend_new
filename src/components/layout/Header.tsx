@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../../constants/data";
 
 export const Header = () => {
   const [moreOpen, setMoreOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const currentPath = window.location.pathname;
 
   const handleNavigation = (href: string) => {
@@ -21,10 +22,12 @@ export const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+    // Close mobile menu after navigation
+    setMobileMenuOpen(false);
   };
 
   return (
-    <header className="bg-[#FEF7F1] shadow-sm">
+    <header className="bg-[#FEF7F1] shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -47,7 +50,7 @@ export const Header = () => {
           {/* <span className="text-xl font-bold text-gray-800">SPP</span> */}
         </div>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
           {NAVIGATION_ITEMS.map((item) => {
             const isActive = currentPath === item.href;
@@ -98,8 +101,8 @@ export const Header = () => {
           })}
         </div>
 
-        {/* Auth Buttons */}
-        <div className="flex items-center gap-3">
+        {/* Desktop Auth Buttons */}
+        <div className="hidden md:flex items-center gap-3">
           <button className="px-5 py-2 border border-orange-500 text-orange-500 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors">
             Login
           </button>
@@ -107,7 +110,74 @@ export const Header = () => {
             Sign Up
           </button>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-gray-700 hover:text-orange-500 transition-colors"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div className="px-6 py-4 space-y-4">
+            {/* Mobile Navigation Items */}
+            {NAVIGATION_ITEMS.map((item) => {
+              const isActive = currentPath === item.href;
+              
+              return (
+                <div key={item.label}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <div className="flex items-center justify-between py-2">
+                        <span className="text-gray-700 font-medium">{item.label}</span>
+                        <ChevronDown size={16} className="text-gray-500" />
+                      </div>
+                      {item.dropdownItems && (
+                        <div className="pl-4 space-y-2">
+                          {item.dropdownItems.map((dropdownItem) => (
+                            <a
+                              key={dropdownItem.label}
+                              href={dropdownItem.href}
+                              className="block py-2 text-gray-600 hover:text-orange-500 transition-colors"
+                            >
+                              {dropdownItem.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => handleNavigation(item.href)}
+                      className={`block w-full text-left py-2 transition-colors ${
+                        isActive
+                          ? "text-orange-500 font-semibold"
+                          : "text-gray-700 hover:text-orange-500"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+            
+            {/* Mobile Auth Buttons */}
+            <div className="pt-4 border-t border-gray-100 space-y-3">
+              <button className="w-full px-5 py-3 border border-orange-500 text-orange-500 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors">
+                Login
+              </button>
+              <button className="w-full px-6 py-3 bg-orange-500 text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
