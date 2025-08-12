@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "../ui/button"
+import { Button } from "../ui/Button"
 import "swiper/css"
 import "swiper/css/navigation"
 

@@ -41,7 +41,7 @@ alt="Students working together"
           {/* Bottom right image - student at computer */}
           <div className="absolute top-24 right-0 w-56 h-40 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
             <img 
-                src="/assets/about1.jpg"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='160' viewBox='0 0 224 160'%3E%3Crect width='224' height='160' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236b7280' font-family='Arial, sans-serif' font-size='12'%3EStudent at Computer%3C/text%3E%3C/svg%3E"
               alt="Student at computer"
               className="w-full h-full object-cover"
             />
