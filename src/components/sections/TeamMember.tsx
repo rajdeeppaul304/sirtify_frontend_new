@@ -13,35 +13,35 @@ const teamMembers = [
     name: "Vakati Ravichandra",
     title: "Visionary & Founder",
     quote: "Turning Bharat's talent potential into global career reality through Skill → Practice → Progress.",
-    image: "/smiling-professional-man.png",
+    image: "/assets/about/person1.jpg",
   },
   {
     id: 2,
     name: "Vakati Ravichandra",
     title: "Visionary & Founder",
     quote: "Turning Bharat's talent potential into global career reality through Skill → Practice → Progress.",
-    image: "/placeholder-obtwi.png",
+    image: "/assets/about/person2.jpg",
   },
   {
     id: 3,
     name: "Vakati Ravichandra",
     title: "Visionary & Founder",
     quote: "Turning Bharat's talent potential into global career reality through Skill → Practice → Progress.",
-    image: "/thoughtful-businessman.png",
+    image: "/assets/about/person3.jpg",
   },
   {
     id: 4,
     name: "Sarah Johnson",
     title: "Head of Innovation",
     quote: "Bridging the gap between traditional education and modern industry needs through cutting-edge technology.",
-    image: "/blonde-businesswoman.png",
+    image: "/assets/about/person1.jpg",
   },
   {
     id: 5,
     name: "Michael Chen",
     title: "Chief Technology Officer",
     quote: "Building scalable solutions that empower millions of learners to achieve their career aspirations.",
-    image: "/placeholder-5axou.png",
+    image: "/assets/about/person2.jpg",
   },
 ]
 
@@ -50,22 +50,22 @@ export default function TeamMemberCarousel() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <style>
           {`
-           .swiper-button-prev,
-.swiper-button-next {
-  position: static !important;
-  margin-top: 0 !important;
-  width: auto !important;
-  height: auto !important;
-}
+          .swiper-button-prev,
+          .swiper-button-next {
+            position: static !important;
+            margin-top: 0 !important;
+            width: auto !important;
+            height: auto !important;
+          }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  display: none !important;
-}
+          .swiper-button-prev:after,
+          .swiper-button-next:after {
+            display: none !important;
+          }
 
-.swiper-button-disabled {
-  opacity: 0.5 !important;
-}
+          .swiper-button-disabled {
+            opacity: 0.5 !important;
+          }
           `}
         </style>
       {/* Header Section */}
