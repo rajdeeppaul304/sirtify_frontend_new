@@ -51,7 +51,7 @@ export const LearnersHeroSection = () => {
                                        {/* Top Center Profile */}
                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-20 h-20">
                          <img
-                           src="public/assets/learners/l.png"
+                           src="/assets/learners/l.png"
                            alt="Learner Profile"
                            className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                          />
@@ -60,7 +60,7 @@ export const LearnersHeroSection = () => {
                        {/* Top Right Profile */}
                        <div className="absolute top-16 right-16 w-20 h-20">
                          <img
-                           src="public/assets/learners/l.png"
+                           src="/assets/learners/l.png"
                            alt="Learner Profile"
                            className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                          />
@@ -69,7 +69,7 @@ export const LearnersHeroSection = () => {
                        {/* Top Left Profile */}
                        <div className="absolute top-16 left-16 w-20 h-20">
                          <img
-                           src="public/assets/learners/l.png"
+                           src="/assets/learners/l.png"
                            alt="Learner Profile"
                            className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                          />
@@ -78,7 +78,7 @@ export const LearnersHeroSection = () => {
                        {/* Bottom Right Profile */}
                        <div className="absolute bottom-16 right-16 w-20 h-20">
                          <img
-                           src="public/assets/learners/l.png"
+                           src="/assets/learners/l.png"
                            alt="Learner Profile"
                            className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                          />
@@ -87,7 +87,7 @@ export const LearnersHeroSection = () => {
                        {/* Bottom Left Profile */}
                        <div className="absolute bottom-16 left-16 w-20 h-20">
                          <img
-                           src="public/assets/learners/l.png"
+                           src="/assets/learners/l.png"
                            alt="Learner Profile"
                            className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                          />
@@ -96,7 +96,7 @@ export const LearnersHeroSection = () => {
                 {/* Central GIF */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32">
                   <img
-                    src="public/assets/learners/center.gif"
+                    src="/assets/learners/center.gif"
                     alt="Central Learners Animation"
                     className="w-full h-full object-contain"
                     style={{ 
