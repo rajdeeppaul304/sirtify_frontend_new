@@ -1,542 +1,28 @@
-import { ArrowRight } from "lucide-react";
 import { Footer, Header } from "../components";
 import { useState } from "react";
+import Hero from "../components/sections/program/hero";
+import About from "../components/sections/program/about";
+import Benefits from "../components/sections/program/benefits";
+import Features from "../components/sections/program/features";
+import AddOnsPricing from "../components/sections/program/addons-pricing";
+import WhoCanUse from "../components/sections/program/who-can-use";
+import FAQ from "../components/sections/program/faq";
 
 export default function Program() {
-  const faqs = [
-    {
-      question: "Is this like a regular course?",
-      answer:
-        "No. This is a job-aligned, real-world project-based system with income, placement, and lifetime support.",
-    },
-    {
-      question: "What if I don't get placed?",
-      answer:
-        "You retain all assets—certifications, resume, portfolio—and get lifetime re-entry support.",
-    },
-    {
-      question: "Do you offer a refund policy?",
-      answer:
-        "Absolutely. We have a 14-day refund policy, no questions asked, if you are not satisfied with your purchase.",
-    },
-    {
-      question: "Do I need to complete all 3 phases?",
-      answer:
-        "No. You can join at any phase. However, doing all 3 ensures maximum benefit.",
-    },
-    {
-      question: "Is this legit and verifiable?",
-      answer:
-        "Yes. Sirtifai is a registered company with NSQF-certified programs and verified payroll via Deel.",
-    },
-    {
-      question: "How quickly can I start earning?",
-      answer:
-        "In the Practice Phase, projects begin within 72 hours of onboarding.",
-    },
-  ];
-
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [variant, setVariant] = useState<string>("skill");
   return (
     <main className="overflow-x-hidden">
       <Header />
       {/* hero */}
-      <section className="w-screen bg-[#FEF7F1]">
-        <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 flex flex-col md:flex-row items-stretch justify-between gap-12">
-          {/* LEFT COLUMN */}
-          <div className="flex flex-col justify-between w-full md:w-full">
-            <div className="space-y-6">
-              <h2 className="text-[28px] sm:text-[40px] md:text-[80px] font-[600] tracking-tight leading-tight capitalize">
-                Sirtifai SPP – Learn. Earn. Get Placed. Rise.
-              </h2>
-
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <div className="flex items-center justify-center gap-4 w-full sm:w-auto md:max-w-[250px] bg-[#284050] border border-[rgba(255,255,255,0.45)] rounded-full px-4 py-2">
-                  <button className="text-base text-white font-[600]">
-                    Book a Call
-                  </button>
-                  <img
-                    className="h-[40px] w-[40px] sm:h-[50px] sm:w-[50px] object-contain"
-                    src="/assets/programs/phone.png"
-                    alt="Phone"
-                  />
-                </div>
-                <span className="text-[16px] sm:text-[18px] font-[400] text-black/40 max-w-full sm:max-w-[370px]">
-                  From no experience to ₹35L/year global careers – your journey,
-                  your pace.
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 justify-start my-8">
-              <h3 className="text-[18px] sm:text-[21px] font-inter font-[400]">
-                Join SPP Now
-              </h3>
-              <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
-                  SPP INT <ArrowRight />
-                </button>
-                <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
-                  SPP FREELANCE <ArrowRight />
-                </button>
-                <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
-                  SPP STUDENT <ArrowRight />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN */}
-          <div className="w-full md:w-1/2">
-            <img
-              src="/assets/programs/program-hero.png"
-              alt="Program Hero"
-              className="w-full h-auto object-cover rounded-lg"
-            />
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* about */}
-      <section className="min-h-screen w-full flex flex-col justify-center items-center space-y-4 sm:space-y-6 max-w-7xl mx-auto px-4">
-        {/* Subtitle */}
-        <span className="text-[#FC4C03] text-sm sm:text-base md:text-lg font-medium tracking-wider text-center">
-          What Is SPP ?
-        </span>
-
-        {/* Title */}
-        <h1 className="text-2xl sm:text-4xl md:text-[60px] font-[600] text-black capitalize text-center leading-tight">
-          Our Three-Phase Approach
-        </h1>
-
-        {/* Description */}
-        <span className="text-[#4B5563] max-w-3xl text-sm sm:text-base md:text-lg font-[400] text-center px-2">
-          SPP is designed as a comprehensive career development program with
-          three distinct phases that work
-        </span>
-
-        {/* Cards */}
-        <div className="flex flex-col md:flex-row gap-8 mt-12 md:mt-24 w-full items-center justify-center">
-          {/* SKILL */}
-          <div className="flex flex-col items-center text-center px-4">
-            <img
-              src="/assets/programs/skill.png"
-              alt="Skill"
-              className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-            />
-            <h2 className="text-[#1F2937] text-lg sm:text-xl md:text-2xl font-[600] my-3">
-              SKILL
-            </h2>
-            <p className="text-[#4B5563] text-sm sm:text-base font-[400]">
-              Build industry-relevant skills through structured learning and
-              hands-on projects
-            </p>
-          </div>
-
-          {/* PRACTICE */}
-          <div className="flex flex-col items-center text-center px-4">
-            <img
-              src="/assets/programs/code.png"
-              alt="Practice"
-              className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-            />
-            <h2 className="text-[#1F2937] text-lg sm:text-xl md:text-2xl font-[600] my-3">
-              PRACTICE
-            </h2>
-            <p className="text-[#4B5563] text-sm sm:text-base font-[400]">
-              Work on real client projects and earn while gaining professional
-              experience
-            </p>
-          </div>
-
-          {/* PROGRESS */}
-          <div className="flex flex-col items-center text-center px-4">
-            <img
-              src="/assets/programs/bar.png"
-              alt="Progress"
-              className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-            />
-            <h2 className="text-[#1F2937] text-lg sm:text-xl md:text-2xl font-[600] my-3">
-              PROGRESS
-            </h2>
-            <p className="text-[#4B5563] text-sm sm:text-base font-[400]">
-              Secure job placement and receive ongoing career support for
-              continued growth
-            </p>
-          </div>
-        </div>
-      </section>
+      <About />
 
       {/* benefits */}
-      <section className="md:min-h-screen pb-4 md:pb-0 w-screen bg-[#FEF7F1]">
-        <div className="flex flex-col justify-center items-center max-w-7xl mx-auto min-h-screen w-screen">
-          <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize">
-            Key Benefits
-          </h1>
-          <div className="bg-[#FC4C03] w-[80px] h-[4px]" />
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:mt-24 mt-8 justify-between">
-            {/* students */}
-            <div className="border-l-4 border-l-[#FE7743] rounded-[12px] bg-white shadow-[0 4px 6px 0 rgba(0, 0, 0, 0.10), 0 10px 15px 0 rgba(0, 0, 0, 0.10)] md:p-8 p-4 w-full">
-              <div className="flex flex-col items-start gap-6">
-                <div className="flex items-center gap-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="21"
-                    viewBox="0 0 18 21"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_406_6521)">
-                      <path
-                        d="M8.81641 0.519531C8.9375 0.496094 9.0625 0.496094 9.18359 0.519531L16.9961 2.08203C17.4336 2.16797 17.75 2.55469 17.75 3C17.75 3.44531 17.4336 3.83203 16.9961 3.91797L14 4.51953V6.75C14 9.51172 11.7617 11.75 9 11.75C6.23828 11.75 4 9.51172 4 6.75V4.51953L2.125 4.14453V6.6875L2.73828 9.75C2.77344 9.93359 2.72656 10.125 2.60937 10.2695C2.49219 10.4141 2.3125 10.5 2.125 10.5H0.874999C0.687499 10.5 0.511718 10.418 0.390624 10.2695C0.269531 10.1211 0.222656 9.93359 0.261718 9.75L0.874999 6.6875V3.88281C0.503906 3.75391 0.249999 3.40234 0.249999 3C0.249999 2.55469 0.566406 2.16797 1.00391 2.08203L8.81641 0.519531ZM4.62109 13.3008C5.03125 13.168 5.47266 13.3164 5.76953 13.6328L8.54297 16.582C8.78906 16.8438 9.20703 16.8438 9.45312 16.582L12.2266 13.6328C12.5234 13.3164 12.9648 13.168 13.375 13.3008C15.9141 14.1172 17.75 16.4922 17.75 19.3008C17.75 19.9648 17.2109 20.5 16.5508 20.5H1.44922C0.789062 20.5 0.249999 19.9609 0.249999 19.3008C0.249999 16.4922 2.08594 14.1172 4.62109 13.3008Z"
-                        fill="#FE7743"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_406_6521">
-                        <path d="M0.25 0.5H17.75V20.5H0.25V0.5Z" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <h2 className="text-[#1F2937] text-xl font-[600]">
-                    For Students
-                  </h2>
-                </div>
-                <div className="mt-8 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_406_6528)">
-                        <path
-                          d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                          fill="#FE7743"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_406_6528">
-                          <path d="M0 0H16V16H0V0Z" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span className="text-[#4B5563] text-[16px] font-[400]">
-                      No prior experience required – ideal for freshers &
-                      final-year students
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_406_6528)">
-                        <path
-                          d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                          fill="#FE7743"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_406_6528">
-                          <path d="M0 0H16V16H0V0Z" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span className="text-[#4B5563] text-[16px] font-[400]">
-                      Gain internship-level & freelance income before graduation
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_406_6528)">
-                        <path
-                          d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                          fill="#FE7743"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_406_6528">
-                          <path d="M0 0H16V16H0V0Z" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span className="text-[#4B5563] text-[16px] font-[400]">
-                      Real work portfolio to crack your first job with
-                      confidence
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_406_6528)">
-                        <path
-                          d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                          fill="#FE7743"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_406_6528">
-                          <path d="M0 0H16V16H0V0Z" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span className="text-[#4B5563] text-[16px] font-[400]">
-                      Lifetime support for job switching, even years later
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/*  */}
-            <div className="border-l-4 border-l-[#FE7743] rounded-[12px] bg-white shadow-[0 4px 6px 0 rgba(0, 0, 0, 0.10), 0 10px 15px 0 rgba(0, 0, 0, 0.10)] p-8 w-full">
-              <div className="flex items-center gap-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="26"
-                  height="20"
-                  viewBox="0 0 26 20"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_406_6556)">
-                    <path
-                      d="M3 3.75C3 2.37109 4.12109 1.25 5.5 1.25H20.5C21.8789 1.25 23 2.37109 23 3.75V13.75H20.5V3.75H5.5V13.75H3V3.75ZM0.5 15.75C0.5 15.3359 0.835938 15 1.25 15H24.75C25.1641 15 25.5 15.3359 25.5 15.75C25.5 17.4062 24.1562 18.75 22.5 18.75H3.5C1.84375 18.75 0.5 17.4062 0.5 15.75ZM11.4766 8.16406L10.2656 9.375L11.4766 10.5859C11.8438 10.9531 11.8438 11.5469 11.4766 11.9102C11.1094 12.2734 10.5156 12.2773 10.1523 11.9102L8.27734 10.0352C7.91016 9.66797 7.91016 9.07422 8.27734 8.71094L10.1523 6.83594C10.5195 6.46875 11.1133 6.46875 11.4766 6.83594C11.8398 7.20312 11.8438 7.79687 11.4766 8.16016V8.16406ZM15.8516 6.83594L17.7266 8.71094C18.0938 9.07812 18.0938 9.67188 17.7266 10.0352L15.8516 11.9102C15.4844 12.2773 14.8906 12.2773 14.5273 11.9102C14.1641 11.543 14.1602 10.9492 14.5273 10.5859L15.7383 9.375L14.5273 8.16406C14.1602 7.79688 14.1602 7.20313 14.5273 6.83984C14.8945 6.47656 15.4883 6.47266 15.8516 6.83984V6.83594Z"
-                      fill="#FC4C03"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_406_6556">
-                      <path d="M0.5 0H25.5V20H0.5V0Z" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <h2 className="text-[#1F2937] text-xl font-[600]">
-                  For Freelancers
-                </h2>
-              </div>
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_406_6528)">
-                      <path
-                        d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                        fill="#FE7743"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_406_6528">
-                        <path d="M0 0H16V16H0V0Z" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
-                    Guaranteed paid client projects with legal contracts
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_406_6528)">
-                      <path
-                        d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                        fill="#FE7743"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_406_6528">
-                        <path d="M0 0H16V16H0V0Z" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
-                    Income via payroll (not just UPI or crypto) – great for
-                    loans,Visas and Taxes.
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_406_6528)">
-                      <path
-                        d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                        fill="#FE7743"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_406_6528">
-                        <path d="M0 0H16V16H0V0Z" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
-                    Verified experience you can showcase to global employers
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_406_6528)">
-                      <path
-                        d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                        fill="#FE7743"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_406_6528">
-                        <path d="M0 0H16V16H0V0Z" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
-                    Support for freelance compliance, taxation, and contracts
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Benefits />
       {/* features */}
-      <section className="md:min-h-[450px] w-full flex flex-col items-center justify-center pb-4 md:pb-0">
-        <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize">
-          What makes SPP Unique
-        </h1>
-        <div className="flex flex-col md:flex-row md:gap-16 items-center gap-4 mt-8 md:mt-24">
-          {/* card */}
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/payroll.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                Payroll Benefits
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                ESI, EPF, Payslips, Tax-compliant
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/career.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                Lifetime Career Help
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                Re-entry, job switch, global access
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/tools.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                Tools Access
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                AI Resume, Portfolio, Analytics.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row md:gap-16 items-center gap-4 mt-8 md:mt-24">
-          {/* card */}
-
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/career.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                Lifetime Career Help
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                Re-entry, job switch, global access
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/tools.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                Tools Access
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                AI Resume, Portfolio, Analytics.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-row items-center gap-4">
-            <img
-              src="/assets/programs/industries.png"
-              alt=""
-              className="w-[40px] h-[40px] object-contain"
-            />
-            <div>
-              <h2 className="text-[#1F2937] text-lg font-[600]">
-                24+ Industries
-              </h2>
-              <p className="text-[#4B5563] text-base">
-                Choose your career – not just tech
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Features />
       {/* pricing */}
       <section className="md:min-h-screen w-screen bg-[#FEF7F1] py-4 md:py-16">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8  justify-center min-h-screen w-screen">
@@ -555,22 +41,38 @@ export default function Program() {
                 flex flex-col md:flex-row items-center justify-center 
                 space-y-4 md:space-y-0 md:space-x-8"
           >
-            <button className="bg-[#FE7642] rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto">
+            <button
+              onClick={() => setVariant("skill")}
+              className={`${
+                variant === "skill" ? "bg-[#FE7642]" : "bg-[#CAC6C6]"
+              } rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto`}
+            >
               Skill Phase
             </button>
-            <button className="bg-[#CAC6C6] rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto">
+            <button
+              onClick={() => setVariant("practice")}
+              className={`${
+                variant === "practice" ? "bg-[#FE7642]" : "bg-[#CAC6C6]"
+              } rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto`}
+            >
               Practice Phase
             </button>
-            <button className="bg-[#CAC6C6] rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto">
+            <button
+              onClick={() => setVariant("progress")}
+              className={`${
+                variant === "progress" ? "bg-[#FE7642]" : "bg-[#CAC6C6]"
+              } rounded-[68px] p-2 px-4 text-white font-[600] text-lg w-full md:w-auto`}
+            >
               Progress Phase
             </button>
           </div>
 
-          <div
-            id="pricing"
-            className="md:w-[1100px]  mx-auto relative rounded-[21px] bg-[#FEB092] shadow-[0 1.443px 9.238px 0 rgba(255, 255, 255, 0.10)]"
-          >
-            {/* <div className="absolute top-0 left-0 z-[0]">
+          {variant == "skill" && (
+            <div
+              id="pricing"
+              className="md:w-[1100px]  mx-auto relative rounded-[21px] bg-[#FEB092] shadow-[0 1.443px 9.238px 0 rgba(255, 255, 255, 0.10)]"
+            >
+              {/* <div className="absolute top-0 left-0 z-[0]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="278"
@@ -584,501 +86,1508 @@ export default function Program() {
                 />
               </svg>
             </div> */}
-            <div className="z-[50] border border-[#E5E7EB] p-4 sm:p-5 md:p-6 bg-white w-full max-w-4xl mx-auto rounded-2xl shadow-md mt-4 md:my-12">
-              {/* Header */}
-              <div className="w-full flex flex-col gap-3 md:gap-0 md:flex-row items-start md:items-center md:justify-between">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-black capitalize">
-                    Skill phase
-                  </h2>
-                  <p className="text-[#4B5563] text-sm sm:text-base">
-                    Foundation learning with essential skills
-                  </p>
+              <div className="z-[50] border border-[#E5E7EB] p-4 sm:p-5 md:p-6 bg-white w-full max-w-4xl mx-auto rounded-2xl shadow-md mt-4 md:my-12">
+                {/* Header */}
+                <div className="w-full flex flex-col gap-3 md:gap-0 md:flex-row items-start md:items-center md:justify-between">
+                  <div>
+                    <h2 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-black capitalize">
+                      Skill phase
+                    </h2>
+                    <p className="text-[#4B5563] text-sm sm:text-base">
+                      Foundation learning with essential skills
+                    </p>
+                  </div>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Single payment
+                  </button>
                 </div>
-                <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
-                  Single payment
-                </button>
-              </div>
 
-              <hr className="my-4 text-[#F3F4F6]" />
+                <hr className="my-4 text-[#F3F4F6]" />
 
-              {/* Price & status */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-3 sm:gap-0">
-                <div className="flex items-center gap-2">
-                  <h1 className="text-2xl sm:text-3xl md:text-[36px] font-bold text-[#111827]">
-                    ₹ 5999
-                  </h1>
-                  <span className="text-[#6B7280] font-normal text-sm sm:text-lg">
-                    (one time payment)
-                  </span>
+                {/* Price & status */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-3 sm:gap-0">
+                  <div className="flex items-center gap-2">
+                    <h1 className="text-2xl sm:text-3xl md:text-[36px] font-bold text-[#111827]">
+                      ₹ 5999
+                    </h1>
+                    <span className="text-[#6B7280] font-normal text-sm sm:text-lg">
+                      (one time payment)
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img
+                      src="/assets/programs/dot-circle.png"
+                      alt=""
+                      className="h-6 w-6 sm:h-[30px] sm:w-[30px] rounded-full object-contain"
+                    />
+                    <span className="text-sm sm:text-base font-medium">
+                      Required
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <img
-                    src="/assets/programs/dot-circle.png"
-                    alt=""
-                    className="h-6 w-6 sm:h-[30px] sm:w-[30px] rounded-full object-contain"
-                  />
-                  <span className="text-sm sm:text-base font-medium">
-                    Required
-                  </span>
-                </div>
-              </div>
 
-              {/* Features */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between my-4 gap-3 sm:gap-0">
-                <div className="flex items-center gap-2">
-                  ✅
-                  <p className="text-sm sm:text-base font-normal">
-                    Core skill development
-                  </p>
+                {/* Features */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between my-4 gap-3 sm:gap-0">
+                  <div className="flex items-center gap-2">
+                    ✅
+                    <p className="text-sm sm:text-base font-normal">
+                      Core skill development
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    ✅
+                    <p className="text-sm sm:text-base font-normal">
+                      Learning Materials
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  ✅
-                  <p className="text-sm sm:text-base font-normal">
-                    Learning Materials
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-3 sm:gap-0">
-                <div className="flex items-center gap-2">
-                  ✅
-                  <p className="text-sm sm:text-base font-normal">
-                    Foundational Knowledge
-                  </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-3 sm:gap-0">
+                  <div className="flex items-center gap-2">
+                    ✅
+                    <p className="text-sm sm:text-base font-normal">
+                      Foundational Knowledge
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    ✅
+                    <p className="text-sm sm:text-base font-normal">
+                      Core Tracking progress
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  ✅
-                  <p className="text-sm sm:text-base font-normal">
-                    Core Tracking progress
-                  </p>
-                </div>
-              </div>
 
-              {/* CTA */}
-              <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
-                <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
-                  Buy Now
-                </button>
+                {/* CTA */}
+                <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                  <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                    Buy Now
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {variant === "practice" && (
+            <div className="md:w-[1100px]  mx-auto relative rounded-[21px] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+              {/* basic */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-4 border-t-[#6B7280] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Basic</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹5,999
+                    </h1>
+                    <span className="text-[#FC4C03]">Income: ₹12,000</span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#F3F4F6] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      NSQF Level 4 certification
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Access to practice phase projects
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Basic Portfolio Development
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Standard payroll processing
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">Community Access</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Skill Training
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      EPF and ESI benefits
+                    </p>
+                  </div>
+                </div>
+                <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                  <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                    Select Basic
+                  </button>
+                </div>
+              </div>
+              {/* pro */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-40 border-t-[#FE7743] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Pro</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹9,999
+                    </h1>
+                    <span className="text-[#FC4C03]">Income: ₹22,000</span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#FFEBE3] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      NSQF Level 5 certification
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Premium Project Assignment
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Portfolio Development
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      EPF benefits included
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Priority Community Support
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Skill Training
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">ESI benefits</p>
+                  </div>
+
+                  <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                    <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                      Select Pro
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {/* elite */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-4 border-t-[#F59E0B] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Elite</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹19,999
+                    </h1>
+                    <span className="text-[#FC4C03]">Income: ₹35,000</span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#FFEBC9] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Domain Learning</p>
+                      <span className="text-xs text-[#6B7280]">
+                        Specialized industry knowledge
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Assignments</p>
+                      <span className="text-xs text-[#6B7280]">
+                        Practical skill development
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <div className="flex flex-col -space-y-1">
+                        <p className="text-sm text-[#1F2937]">
+                          Career Analytics
+                        </p>
+                        <span className="text-xs text-[#6B7280]">
+                          Track your growth and opportunities
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Recorded Classes</p>
+                      <span className="text-xs text-[#6B7280]">
+                        On-demand learning materials
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">
+                        NSQF certification
+                      </p>
+                      <span className="text-xs text-[#6B7280]">
+                        Nationality recognized qualification
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                    <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                      Select Elite
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {variant === "progress" && (
+            <div className="md:w-[1100px]  mx-auto relative rounded-[21px] flex flex-row justify-center items-center gap-4 md:gap-8">
+              {/* basic */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-4 border-t-[#6B7280] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Basic</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹19,999
+                    </h1>
+                    <span className="text-[#FC4C03]">
+                      Income: ₹2.4L - 3.5 L
+                    </span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#F3F4F6] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      NSQF Level 4 certification
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Access to practice phase projects
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Basic Portfolio Development
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Standard payroll processing
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">Community Access</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Skill Training
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      EPF and ESI benefits
+                    </p>
+                  </div>
+                </div>
+                <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                  <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                    Select Basic
+                  </button>
+                </div>
+              </div>
+              {/* pro */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-40 border-t-[#FE7743] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Pro</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹29,999
+                    </h1>
+                    <span className="text-[#FC4C03]">Income: ₹4.5L - 7L</span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#FFEBE3] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      NSQF Level 5 certification
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Premium Project Assignment
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Portfolio Development
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      EPF benefits included
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Priority Community Support
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">
+                      Advanced Skill Training
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="17"
+                      viewBox="0 0 12 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 16.5996H0V0.599609H12V16.5996Z"
+                        stroke="#E5E7EB"
+                      />
+                      <path
+                        d="M10.7063 5.30576C11.0969 4.91514 11.0969 4.28076 10.7063 3.89014C10.3156 3.49951 9.68127 3.49951 9.29065 3.89014L6.00002 7.18389L2.70627 3.89326C2.31565 3.50264 1.68127 3.50264 1.29065 3.89326C0.900024 4.28389 0.900024 4.91826 1.29065 5.30889L4.5844 8.59951L1.29377 11.8933C0.903149 12.2839 0.903149 12.9183 1.29377 13.3089C1.6844 13.6995 2.31877 13.6995 2.7094 13.3089L6.00002 10.0151L9.29377 13.3058C9.6844 13.6964 10.3188 13.6964 10.7094 13.3058C11.1 12.9151 11.1 12.2808 10.7094 11.8901L7.41565 8.59951L10.7063 5.30576Z"
+                        fill="#9CA3AF"
+                      />
+                    </svg>
+                    <p className="text-sm text-[#1F2937]">ESI benefits</p>
+                  </div>
+
+                  <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                    <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                      Select Pro
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {/* elite */}
+              <div className="w-[400px] md:h-[620px] bg-white shadow-[0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 4px 6px 0 rgba(0, 0, 0, 0.10)] rounded-[12px] border-t-4 border-t-[#F59E0B] px-2 py-2">
+                <div className="flex items-center justify-between ">
+                  <h2 className="text-[#1F2937] text-xl font-[600]">Elite</h2>
+                  <button className="text-[#FF7847] bg-[#FFF2EC] px-3 py-1 rounded-full text-sm sm:text-base">
+                    Quarterly payment
+                  </button>
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+                  <div>
+                    <h1 className="text-[#1F2937] text-[30px] font-bold ">
+                      ₹59,999
+                    </h1>
+                    <span className="text-[#FC4C03]">Income: ₹8L-12L</span>
+                  </div>
+                  <span className="text-[#6B7280] text-sm font-[400]">
+                    (quarterly + 18% GST)
+                  </span>
+                </div>
+                <div className="bg-[#FFEBC9] flex items-center gap-4 rounded-md p-2 my-4 md:my-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_406_6996)">
+                      <path
+                        d="M4.89062 14.5902L4.49687 15.5121C3.9125 15.2152 3.375 14.8496 2.8875 14.4215L3.59687 13.7121C3.9875 14.0527 4.42188 14.3496 4.89062 14.5902ZM1.26875 9.09961H0.265625C0.309375 9.76211 0.434375 10.4027 0.63125 11.009L1.5625 10.6371C1.40937 10.1465 1.30625 9.63086 1.26875 9.09961ZM1.26875 8.09961C1.3125 7.51211 1.43125 6.94336 1.61563 6.40898L0.69375 6.01523C0.459375 6.67148 0.3125 7.37148 0.265625 8.09961H1.26875ZM2.00938 5.49023C2.25313 5.02461 2.54688 4.59023 2.8875 4.19336L2.17812 3.48398C1.75 3.97148 1.38125 4.50898 1.0875 5.09336L2.00938 5.49023ZM12.4062 13.7121C11.9719 14.0871 11.4875 14.409 10.9656 14.6621L11.3375 15.5934C11.9844 15.284 12.5813 14.8871 13.1156 14.4184L12.4062 13.7121ZM3.59375 3.48711C4.02813 3.11211 4.5125 2.79023 5.03438 2.53711L4.6625 1.60586C4.01562 1.91523 3.41875 2.31211 2.8875 2.78086L3.59375 3.48711ZM13.9906 11.709C13.7469 12.1746 13.4531 12.609 13.1125 13.0059L13.8219 13.7152C14.25 13.2277 14.6188 12.6871 14.9125 12.1059L13.9906 11.709ZM14.7312 9.09961C14.6875 9.68711 14.5687 10.2559 14.3844 10.7902L15.3062 11.184C15.5406 10.5246 15.6875 9.82461 15.7312 9.09648H14.7312V9.09961ZM10.0375 15.0371C9.54688 15.1934 9.03125 15.2934 8.5 15.3309V16.334C9.1625 16.2902 9.80313 16.1652 10.4094 15.9684L10.0375 15.0371ZM7.5 15.3309C6.9125 15.2871 6.34375 15.1684 5.80937 14.984L5.41563 15.9059C6.075 16.1402 6.775 16.2871 7.50313 16.3309V15.3309H7.5ZM14.4375 6.56211C14.5938 7.05273 14.6937 7.56836 14.7312 8.09961H15.7344C15.6906 7.43711 15.5656 6.79648 15.3687 6.19023L14.4375 6.56211ZM2.8875 13.0059C2.5125 12.5715 2.19062 12.0871 1.9375 11.5652L1.00625 11.9371C1.31562 12.584 1.7125 13.1809 2.18125 13.7152L2.8875 13.0059ZM8.5 1.86836C9.0875 1.91211 9.65312 2.03086 10.1906 2.21523L10.5844 1.29336C9.92813 1.05898 9.22812 0.912109 8.5 0.865234V1.86836ZM5.9625 2.16211C6.45312 2.00586 6.96875 1.90586 7.5 1.86836V0.865234C6.8375 0.908984 6.19687 1.03398 5.59062 1.23086L5.9625 2.16211ZM13.8219 3.48398L13.1125 4.19336C13.4875 4.62773 13.8094 5.11211 14.0656 5.63398L14.9969 5.26211C14.6875 4.61523 14.2906 4.01836 13.8219 3.48398ZM12.4062 3.48711L13.1156 2.77773C12.6281 2.34961 12.0906 1.98086 11.5063 1.68711L11.1125 2.60898C11.575 2.85273 12.0125 3.14648 12.4062 3.48711Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8 12.8496C8.48325 12.8496 8.875 12.4579 8.875 11.9746C8.875 11.4914 8.48325 11.0996 8 11.0996C7.51675 11.0996 7.125 11.4914 7.125 11.9746C7.125 12.4579 7.51675 12.8496 8 12.8496Z"
+                        fill="#22C55E"
+                      />
+                      <path
+                        d="M8.24057 10.3496H7.74057C7.53432 10.3496 7.36557 10.1809 7.36557 9.97461C7.36557 7.75586 9.78432 7.97773 9.78432 6.60586C9.78432 5.98086 9.22807 5.34961 7.99057 5.34961C7.0812 5.34961 6.6062 5.64961 6.14057 6.24648C6.0187 6.40273 5.7937 6.43398 5.63432 6.32148L5.22495 6.03398C5.04995 5.91211 5.00932 5.66523 5.1437 5.49648C5.8062 4.64648 6.5937 4.09961 7.9937 4.09961C9.62807 4.09961 11.0374 5.03086 11.0374 6.60586C11.0374 8.71836 8.6187 8.59023 8.6187 9.97461C8.61557 10.1809 8.44682 10.3496 8.24057 10.3496Z"
+                        fill="#22C55E"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_406_6996">
+                        <path
+                          d="M0 0.599609H16V16.5996H0V0.599609Z"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <p className="text-sm text-[#1F2937]">
+                    Insurance-backed payment guarantee
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-16 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Domain Learning</p>
+                      <span className="text-xs text-[#6B7280]">
+                        Specialized industry knowledge
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Assignments</p>
+                      <span className="text-xs text-[#6B7280]">
+                        Practical skill development
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <div className="flex flex-col -space-y-1">
+                        <p className="text-sm text-[#1F2937]">
+                          Career Analytics
+                        </p>
+                        <span className="text-xs text-[#6B7280]">
+                          Track your growth and opportunities
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">Recorded Classes</p>
+                      <span className="text-xs text-[#6B7280]">
+                        On-demand learning materials
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_406_7007)">
+                        <path
+                          d="M13.7063 3.89331C14.0969 4.28394 14.0969 4.91831 13.7063 5.30894L5.70627 13.3089C5.31565 13.6996 4.68127 13.6996 4.29065 13.3089L0.290649 9.30894C-0.0999756 8.91831 -0.0999756 8.28394 0.290649 7.89331C0.681274 7.50269 1.31565 7.50269 1.70627 7.89331L5.00002 11.1839L12.2938 3.89331C12.6844 3.50269 13.3188 3.50269 13.7094 3.89331H13.7063Z"
+                          fill="#22C55E"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_406_7007">
+                          <path
+                            d="M0 0.599609H14V16.5996H0V0.599609Z"
+                            fill="white"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div className="flex flex-col -space-y-1">
+                      <p className="text-sm text-[#1F2937]">
+                        NSQF certification
+                      </p>
+                      <span className="text-xs text-[#6B7280]">
+                        Nationality recognized qualification
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
+                    <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
+                      Select Elite
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Adds on pricing */}
 
-      <section className="min-h-screen w-screen flex flex-col justify-center items-center">
-        <div className="w-full flex flex-col items-center justify-center">
-          <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize text-center">
-            Add-On Services & Pricing
-          </h1>
-          <p className="text-[#4B5563] text-xs md:text-base max-w-[538px] text-center mt-4">
-            Boost your SPP Experience with professional services that support
-            real work, payroll,taxes, and legal compliance—perfect for serious
-            freelancers, global aspirants, and career-track professionals.
-          </p>
-        </div>
-
-        {/* cards */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-4 md:gap-8 sm:grid-cols-3 md:grid-cols-3 mt-8 sm:mt-12 md:mt-16">
-          {/* card 1 */}
-          <div className="w-full rounded-[12px] shadow-[0 4px 6px 0 rgba(0, 0, 0, 0.10), 0 10px 15px 0 rgba(0, 0, 0, 0.10)] bg-white border border-[#E5E7EB] flex flex-col">
-            {/* Header */}
-            <div className="bg-[#AB735D] px-4 py-2 rounded-t-[12px]">
-              <h3 className="text-white text-lg font-[700]">
-                Payroll Services (via Deel™)
-              </h3>
-            </div>
-
-            {/* Content */}
-            <div className="p-4 space-y-4 flex-grow">
-              <p className="text-[#4B5563] text-base mt-4">
-                Get paid like a professional with verified income, payslips, and
-                statutory benefits.
-              </p>
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  Payroll + EPF/ESI
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  Full compliance with India's PF/ESI structure verified salary
-                  slips
-                </p>
-              </div>
-
-              <h2 className="text-[#AB735D] font-[700]">₹33,500 / $400</h2>
-
-              <hr className="w-full bg-[#E5E7EB]" />
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  Global Freelance Payroll
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  International structure for US/UK/Canada clients, tax-ready
-                  payout
-                </p>
-              </div>
-
-              <h2 className="text-[#AB735D] font-[700]">₹41,800 / $500</h2>
-            </div>
-
-            {/* Button at bottom */}
-            <div className="p-4">
-              <button className="w-full text-white bg-[#AB735D] rounded-full py-2 px-3">
-                Buy Now
-              </button>
-            </div>
-          </div>
-
-          {/* card 2 */}
-          <div className="w-full rounded-[12px] shadow-[0 4px 6px 0 rgba(0, 0, 0, 0.10), 0 10px 15px 0 rgba(0, 0, 0, 0.10)] bg-white border border-[#E5E7EB] flex flex-col">
-            {/* Header */}
-            <div className="bg-[#FE7743] px-4 py-2 rounded-t-[12px]">
-              <h3 className="text-white text-lg font-[700]">CA Services</h3>
-              <p className="text-base font-[400] text-white/80">
-                Chartered Accountant Support
-              </p>
-            </div>
-
-            {/* Content */}
-            <div className="p-4 space-y-4 flex-grow">
-              <p className="text-[#4B5563] text-base mt-4">
-                Manage your income, taxes, and filings with expert CA
-                assistance.
-              </p>
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  CA Basic
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  Income Tax Return filing + basic invoicing
-                </p>
-              </div>
-              <h2 className="text-[#FE7743] font-[700]">₹1,999</h2>
-
-              <hr className="w-full bg-[#E5E7EB]" />
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">CA Pro</h4>
-                <p className="text-[#4B5563] text-sm">
-                  GST, advance tax, bank reconciliation, income mapping
-                </p>
-              </div>
-              <h2 className="text-[#FE7743] font-[700]">₹3,999</h2>
-
-              <hr className="w-full bg-[#E5E7EB]" />
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  CA Elite
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  Dedicated CA, startup compliance, international remittance
-                  guidance
-                </p>
-              </div>
-              <h2 className="text-[#FE7743] font-[700]">₹7,999</h2>
-            </div>
-
-            {/* Button at bottom */}
-            <div className="p-4">
-              <button className="w-full text-white bg-[#FE7743] rounded-full py-2 px-3">
-                Buy Now
-              </button>
-            </div>
-          </div>
-
-          {/* card 3 */}
-          <div className="w-full rounded-[12px] shadow-[0_4px_6px_0_rgba(0,0,0,0.10),0_10px_15px_0_rgba(0,0,0,0.10)] bg-white border border-[#E5E7EB] flex flex-col">
-            {/* Header */}
-            <div className="bg-[#FC4C03] px-4 py-2 rounded-t-[12px]">
-              <h3 className="text-white text-lg font-[700]">Legal Services</h3>
-              <p className="text-base font-[400] text-white/80">
-                Contract & IP Support
-              </p>
-            </div>
-
-            {/* Content */}
-            <div className="p-4 space-y-4 flex-grow">
-              <p className="text-[#4B5563] text-base mt-4">
-                Stay legally protected while working with clients—India or
-                abroad.
-              </p>
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  Legal Starter
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  NDA + Service Agreement Templates
-                </p>
-              </div>
-              <h2 className="text-[#FC4C03] font-[700]">
-                ₹999 <sub>one time</sub>
-              </h2>
-
-              <hr className="w-full bg-[#E5E7EB]" />
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  Legal Freelancer Pro
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  5 legal drafts, IP rights, basic dispute advisory
-                </p>
-              </div>
-              <h2 className="text-[#FC4C03] font-[700]">₹4,999/month</h2>
-
-              <hr className="w-full bg-[#E5E7EB]" />
-
-              <div>
-                <h4 className="text-[#1F2937] text-base font-[600]">
-                  Legal Global Elite
-                </h4>
-                <p className="text-[#4B5563] text-sm">
-                  Unlimited contracts, legal notices, client dispute handling
-                </p>
-              </div>
-              <h2 className="text-[#FC4C03] font-[700]">₹9,999/month</h2>
-            </div>
-
-            {/* Button at bottom */}
-            <div className="p-4">
-              <button className="w-full text-white bg-[#FC4C03] rounded-full py-2 px-3">
-                Buy Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* combo pack */}
-        <div
-          className="max-w-7xl mx-auto w-full mt-16 shadow-[0_4px_6px_0_rgba(0,0,0,0.10),_0_10px_15px_0_rgba(0,0,0,0.10)] border border-[#E5E7EB] rounded-[12px] px-4 py-4 flex items-center justify-between"
-          style={{
-            background: "linear-gradient(90deg, #FE7743 0%, #DD8A6A 100%)",
-          }}
-        >
-          <div>
-            <h1 className="text-2xl font-bold text-white">
-              Freelancer Shield Combo Pack
-            </h1>
-            <p className="text-sm text-white/70 font-normal">
-              Complete Protection for Serious Freelancers & Remote Workers
-            </p>
-
-            <ul className="mt-4 space-y-2">
-              <li className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_406_6699)">
-                    <path
-                      d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_406_6699">
-                      <path d="M0 0H16V16H0V0Z" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
-                <p className="text-sm font-[400] text-white">
-                  Payroll + EPF/ESI
-                </p>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_406_6699)">
-                    <path
-                      d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_406_6699">
-                      <path d="M0 0H16V16H0V0Z" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
-                <p className="text-sm font-[400] text-white">CA Pro Services</p>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_406_6699)">
-                    <path
-                      d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76562 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_406_6699">
-                      <path d="M0 0H16V16H0V0Z" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
-                <p className="text-sm font-[400] text-white">
-                  Legal Freelancer Pro
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-end justify-end flex-col">
-            <button className=" bg-white text-[#FE7743] font-bold rounded-full py-2 px-3">
-              ₹39,999/month
-            </button>
-            <p className="text-sm text-white/70 font-normal mt-2">
-              Save ₹8,500/month compared to individual plans
-            </p>
-          </div>
-        </div>
-      </section>
+      <AddOnsPricing />
 
       {/* who can use it */}
-      <section className="min-h-screen w-screen bg-[#FEF7F1] mt-4 md:mt-16">
-        <div className="max-w-7xl mx-auto min-h-screen w-screen flex flex-col justify-center items-start">
-          <h1 className="text-[30px]  md:text-[60px] font-[600] text-black capitalize text-center w-full">
-            Who is this For?
-          </h1>
-
-          <div className="flex flex-row gap-4 md:gap-8 mt-8">
-            <div className="bg-white rounded-[12px] border-1 w-[400px] border-white shadow-[0 1px 2px 0 rgba(0, 0, 0, 0.05)] flex flex-col p-4 gap-4 items-center justify-center">
-              <img
-                src="/assets/programs/student.png"
-                alt=""
-                className="h-16 w-16 object-cover"
-              />
-
-              <h2 className="text-[#1F2937] text-xl font-[600]">
-                Final Year Students
-              </h2>
-
-              <p className="text-[#4B5563] text-base font-normal">
-                Start early, build skill + portfolio.
-              </p>
-            </div>
-            <div className="bg-white rounded-[12px] border-1 w-[400px] border-white shadow-[0 1px 2px 0 rgba(0, 0, 0, 0.05)] flex flex-col p-4 gap-4 items-center justify-center">
-              <img
-                src="/assets/programs/seeker.png"
-                alt=""
-                className="h-16 w-16 object-cover"
-              />
-
-              <h2 className="text-[#1F2937] text-xl font-[600]">
-                Freshers & Job Seekers
-              </h2>
-
-              <p className="text-[#4B5563] text-base font-normal">
-                Learn, earn, and get placed.
-              </p>
-            </div>
-            <div className="bg-white rounded-[12px] border-1 w-[400px] border-white shadow-[0 1px 2px 0 rgba(0, 0, 0, 0.05)] flex flex-col p-4 gap-4 items-center justify-center">
-              <img
-                src="/assets/programs/freelancers.png"
-                alt=""
-                className="h-16 w-16 object-cover"
-              />
-
-              <h2 className="text-[#1F2937] text-xl font-[600]">Freelancers</h2>
-
-              <p className="text-[#4B5563] text-base font-normal">
-                Get verified client projects + monthly income.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row gap-4 md:gap-8 mt-8">
-            <div className="bg-white rounded-[12px] border-1 w-[400px] border-white shadow-[0 1px 2px 0 rgba(0, 0, 0, 0.05)] flex flex-col p-4 gap-4 items-center justify-center">
-              <img
-                src="/assets/programs/career-switchers.png"
-                alt=""
-                className="h-16 w-16 object-cover"
-              />
-
-              <h2 className="text-[#1F2937] text-xl font-[600]">
-                Career Switchers
-              </h2>
-
-              <p className="text-[#4B5563] text-base font-normal">
-                Transition to high-paying domains.
-              </p>
-            </div>
-            <div className="bg-white rounded-[12px] border-1 w-[400px] border-white shadow-[0 1px 2px 0 rgba(0, 0, 0, 0.05)] flex flex-col p-4 gap-4 items-center justify-center">
-              <img
-                src="/assets/programs/immigrants.png"
-                alt=""
-                className="h-16 w-16 object-cover"
-              />
-
-              <h2 className="text-[#1F2937] text-xl font-[600]">
-                Immigration Aspirants
-              </h2>
-
-              <p className="text-[#4B5563] text-base font-normal">
-                Elite plan helps build visa-friendly global profiles.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoCanUse />
       {/* FAQS */}
-      <section className="min-h-screen w-full py-4 md:py-16">
-        <div className="min-h-screen w-full flex flex-col justify-center items-center">
-          <div className="w-full max-w-7xl mx-auto">
-            <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize text-center w-full">
-              Frequently Asked Questions
-            </h1>
-
-            <div className="space-y-4 w-full my-8">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white shadow-md rounded-lg border border-gray-200 w-full"
-                >
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? null : index)
-                    }
-                    className="w-full flex justify-between items-center p-5 text-left text-lg font-medium text-[#1F2937]"
-                  >
-                    {faq.question}
-                    <span className="text-gray-500 text-2xl leading-none">
-                      {openIndex === index ? "−" : "+"}
-                    </span>
-                  </button>
-                  {openIndex === index && (
-                    <div className="p-5 border-t border-gray-200 text-[#4B5563]">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       {/* Footer */}
       <Footer />
