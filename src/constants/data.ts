@@ -27,14 +27,15 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     hasDropdown: true,
               dropdownItems: [
             // { label: "Blog", href: "#blog" },
-            { label: "Careers", href: "#careers" },
-            { label:"Certifcations",  href:"/certifications"},
-            { label:"Insurance",  href:"/insurance"},
-            { label:"Media and Campaign",  href:"/media-and-campaign"},
-            { label:"Freelancer",  href:"/freelancer"},
+            // { label: "Careers", href: "#careers" },
+            // { label:"Certifcations",  href:"/certifications"},
+            // { label:"Insurance",  href:"/insurance"},
+            // { label:"Media and Campaign",  href:"/media-and-campaign"},
+            // { label:"Freelancer",  href:"/freelancer"},
             { label: "Sirtify International", href: "/sirtify-international" },
             { label: "Contact Us", href: "/contact" },
-            { label: "FAQ", href: "/faq" },          ],
+            // { label: "FAQ", href: "/faq" },         
+           ],
   },
 ];
 
