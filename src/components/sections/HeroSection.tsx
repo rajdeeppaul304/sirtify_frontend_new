@@ -10,12 +10,13 @@ export const HeroSection = () => {
       <div className="relative w-full lg:max-w-[700px] lg:mx-10 flex flex-col justify-start items-start gap-10">
         
         <div className='relative'>
-          <img className='absolute w-[50px] h-[50px]' src={star} alt="Star" />
+          <img className='absolute right-[-1%] top-[-14%] w-[30px] h-[30px]' src={star} alt="Star" />
+
+          <h1 className="text-[4rem] lg:text-[4.5rem] leading-[100%] font-semibold font-open-sans text-black">
+            Unlock Your Potential Launch Your <span className='text-[#FE7642]'>Career</span>
+          </h1>
         </div>
 
-        <h1 className="text-[4rem] lg:text-[4.5rem] leading-[100%] font-semibold font-open-sans text-black">
-          Unlock Your Potential Launch Your <span className='text-[#FE7642]'>Career</span>
-        </h1>
         <div className='flex flex-col md:flex-row justify-start gap-[18px] items-center'>
 
           <div className="bg-[#284050] text-white rounded-full text-base font-semibold flex items-center justify-between gap-3 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-[226px] h-[64px] p-1">
@@ -56,12 +57,6 @@ export const HeroSection = () => {
       <div className="relative flex justify-center items-center h-[600px]">
         <img className='hidden lg:flex object-cover' src={heroImage} alt="Woman Holding Book" />
         
-
-
-        {/* Location Tag */}
-        <div className="absolute bottom-12 right-12 bg-gray-800 text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300">
-          From Guntur to Germany
-        </div>
       </div>
     </div>
   );
