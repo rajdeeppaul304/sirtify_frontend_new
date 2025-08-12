@@ -8,7 +8,7 @@ export const PartnersSection = () => {
         <div className="flex flex-col justify-center items-center gap-20">
                            {/* Left Side - Large Wireframe Globe */}
                  <div className="flex-1 flex justify-center">
-                   <div className="absolute left-[-10%] transform-3d top-0 w-[700px] h-[700px]">
+                   <div className="absolute left-[-10%] transform-3d top-[-30%] w-[700px] h-[700px]">
                      <RotatingGlobe />
                    </div>
                  </div>
