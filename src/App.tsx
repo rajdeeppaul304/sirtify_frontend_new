@@ -12,6 +12,15 @@ import {
   Footer,
 } from "./components";
 import { AboutUs } from "./pages/AboutUs";
+
+
+import CancellationPolicyPage from "./pages/CancellationPolicy";
+import CookiesPolicyPage from "./pages/CookiesPolicy";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy";
+import RefundPolicyPage from "./pages/RefundPolicy";
+
+
+
 import { LearnersPage } from "./pages/LearnersPage";
 import { CertificationsPage } from "./pages/CertificationsPage";
 import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
@@ -62,6 +71,22 @@ export default function App() {
 
   if (currentPath === "/contact") {
     return <ContactUsPage />;
+  }
+
+  if (currentPath === "/cancellation-policy") {
+    return <CancellationPolicyPage />;
+  }
+
+    if (currentPath === "/cookies-policy") {
+    return <CookiesPolicyPage />;
+  }
+
+    if (currentPath === "/privacy-policy") {
+    return <PrivacyPolicyPage />;
+  }
+
+    if (currentPath === "/refund-policy") {
+    return <RefundPolicyPage />;
   }
 
   // Default landing page
