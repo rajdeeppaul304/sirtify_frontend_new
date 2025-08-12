@@ -10,3 +10,4 @@ export { SuccessStoriesSection } from './sections/SuccessStoriesSection';
 // UI Components
 export { Button } from './ui/Button';
 export { Card } from './ui/Card';
+export { SuccessStoryCard } from './ui/SuccessStoryCard';
