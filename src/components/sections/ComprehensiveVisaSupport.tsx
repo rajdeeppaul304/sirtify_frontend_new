@@ -11,7 +11,7 @@ interface VisaService {
 interface TargetCountry {
   id: string;
   name: string;
-  flag: string;
+  image: string; // Path or file name for the flag image
 }
 
 const VISA_SERVICES: VisaService[] = [
@@ -51,14 +51,14 @@ const VISA_SERVICES: VisaService[] = [
 ];
 
 const TARGET_COUNTRIES: TargetCountry[] = [
-  { id: 'usa', name: 'United States', flag: '🇺🇸' },
-  { id: 'germany', name: 'Germany', flag: '🇩🇪' },
-  { id: 'canada', name: 'Canada', flag: '🇨🇦' },
-  { id: 'australia', name: 'Australia', flag: '🇦🇺' },
-  { id: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
-  { id: 'singapore', name: 'Singapore', flag: '🇸🇬' },
-  { id: 'netherlands', name: 'Netherlands', flag: '🇳🇱' },
-  { id: 'sweden', name: 'Sweden', flag: '🇸🇪' }
+  { id: 'usa', name: 'United States', image: '/assets/international/unitedstates.jpg' },
+  { id: 'germany', name: 'Germany', image: '/assets/international/germany.jpg' },
+  { id: 'canada', name: 'Canada', image: '/assets/international/canada.jpg' },
+  { id: 'australia', name: 'Australia', image: '/assets/international/australia.jpg' },
+  { id: 'uk', name: 'United Kingdom', image: '/assets/international/unitedkingdom.jpg' },
+  { id: 'singapore', name: 'Singapore', image: '/assets/international/singapore.jpg' },
+  { id: 'netherlands', name: 'Netherlands', image: '/assets/international/netherlands.jpg' },
+  { id: 'sweden', name: 'Sweden', image: '/assets/international/sweden.jpg' }
 ];
 
 export const ComprehensiveVisaSupport = () => {
@@ -78,21 +78,31 @@ export const ComprehensiveVisaSupport = () => {
         {/* Visa Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {VISA_SERVICES.map((service) => (
-            <div key={service.id} className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <div
+              key={service.id}
+              className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+            >
               {/* Service Header */}
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <service.icon size={32} className="text-orange-500" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
 
               {/* Services List */}
               <div className="space-y-3 mb-6">
                 {service.services.map((serviceItem, index) => (
                   <div key={index} className="flex items-center">
-                    <Check size={20} className="text-green-500 mr-3 flex-shrink-0" />
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-3 flex-shrink-0"
+                    />
                     <span className="text-gray-700 text-sm">{serviceItem}</span>
                   </div>
                 ))}
@@ -110,16 +120,28 @@ export const ComprehensiveVisaSupport = () => {
 
         {/* Target Countries Section */}
         <div className="text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12">Target Countries</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {TARGET_COUNTRIES.map((country) => (
-              <div key={country.id} className="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center">
-                <div className="text-4xl mb-3">{country.flag}</div>
-                <h4 className="text-lg font-semibold text-gray-900">{country.name}</h4>
-              </div>
-            ))}
-          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-12">
+            Target Countries
+          </h3>
+
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+  {TARGET_COUNTRIES.map((country) => (
+    <div
+      key={country.id}
+      className="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center"
+    >
+      <img
+        src={country.image}
+        alt={country.name}
+        className="mx-auto mb-3 w-16 h-16 object-cover rounded-full"
+      />
+      <h4 className="text-lg font-semibold text-gray-900">
+        {country.name}
+      </h4>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </section>

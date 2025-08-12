@@ -15,7 +15,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'basic',
     title: 'Basic',
-    price: '$59,000',
+    price: '$675',
     description: 'Essential support for your international career journey',
     includedFeatures: [
       'Complete skill development program',
@@ -33,7 +33,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'pro',
     title: 'Pro',
-    price: '$1,18,000',
+    price: '$1345',
     description: 'Enhanced support with job sourcing and interview preparation',
     includedFeatures: [
       'Everything in Basic plan',
@@ -52,7 +52,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'elite',
     title: 'Elite',
-    price: '$1,77,000',
+    price: '$2020',
     description: 'Comprehensive support from training to relocation',
     includedFeatures: [
       'Everything in Pro plan',
@@ -69,78 +69,217 @@ const PRICING_PLANS: PricingPlan[] = [
 
 export const InternationalPricingPlans = () => {
   return (
-    <section className="w-full bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Choose Your International Journey Plan
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Select the plan that best fits your global career aspirations and budget. All plans include our core 18-month roadmap.
-          </p>
-        </div>
+    <>
+      <style>{`
+        .pricing-card {
+          position: relative;
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          border: 2px solid #e5e7eb;
+          transition: all 0.3s ease;
+          overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+          box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+          transform: translateY(-2px);
+        }
+        
+        .pricing-card.popular {
+          border-color: #f97316;
+          transform: scale(1.05);
+        }
+        
+        .pricing-card.popular:hover {
+          transform: scale(1.05) translateY(-2px);
+        }
+        
+        .card-header {
+          position: relative;
+          padding: 0;
+          overflow: hidden;
+        }
+        
+        .header-band {
+          height: 8px;
+          width: 100%;
+        }
+        
+        .header-band.basic {
+          background: linear-gradient(90deg, #6b7280, #9ca3af);
+        }
+        
+        .header-band.popular {
+          background: linear-gradient(90deg, #f97316, #fb923c);
+          position: relative;
+          height:30px;
+        }
+        
+        .header-band.elite {
+          background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+        
+        .popular-badge {
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          // background: #f97316;
+          color: white;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          z-index: 10;
+          margin-top:10px;
+          box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+        }
+        
+        .card-content {
+          padding: 24px;
+        }
+        
+        .plan-title {
+          font-size: 24px;
+          font-weight: 700;
+          color: #111827;
+          margin-bottom: 8px;
+        }
+        
+        .plan-price {
+          font-size: 36px;
+          font-weight: 800;
+          color: #111827;
+          margin-bottom: 4px;
+          display: inline-block;
+          margin-right: 12px;
+        }
+        
+        .price-period {
+          font-size: 14px;
+          color: #6b7280;
+          margin-bottom: 16px;
+          display: inline-block;
+        }
+        
+        .plan-description {
+          color: #4b5563;
+          font-size: 14px;
+          line-height: 1.5;
+          margin-bottom: 24px;
+          text-align: left;
+        }
+        
+        .features-list {
+          margin-bottom: 32px;
+        }
+        
+        .feature-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 12px;
+        }
+        
+        .feature-item.excluded {
+          opacity: 0.4;
+        }
+        
+        .feature-icon {
+          margin-right: 12px;
+          margin-top: 2px;
+          flex-shrink: 0;
+        }
+        
+        .feature-text {
+          font-size: 14px;
+          line-height: 1.4;
+          color: #374151;
+        }
+        
+        .cta-button {
+          width: 100%;
+          background: #f97316;
+          color: white;
+          padding: 14px 24px;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+          background: #ea580c;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+      `}</style>
+      
+      <section className="w-full bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+              Choose Your International Journey Plan
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Select the plan that best fits your global career aspirations and budget. All plans include our core 18-month roadmap.
+            </p>
+          </div>
 
-        {/* Pricing Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PRICING_PLANS.map((plan) => (
-            <div key={plan.id} className={`relative bg-white rounded-2xl shadow-lg border-2 hover:shadow-xl transition-shadow ${
-              plan.isPopular ? 'border-orange-500 scale-105' : 'border-gray-100'
-            }`}>
-              
-              {/* Popular Badge */}
-              {plan.isPopular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    Most Popular
+          {/* Pricing Plans Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {PRICING_PLANS.map((plan) => (
+              <div key={plan.id} className={`pricing-card ${plan.isPopular ? 'popular' : ''}`}>
+                
+                {/* Header Band */}
+                <div className="card-header">
+                  <div className={`header-band ${plan.isPopular ? 'popular' : plan.id}`}></div>
+                  {plan.isPopular && (
+                    <div className="popular-badge">
+                      Most Popular
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Content */}
+                <div className="card-content" style={{ paddingTop: plan.isPopular ? '24px' : '24px' }}>
+                  <h3 className="plan-title">{plan.title}</h3>
+                  <div style={{ marginBottom: '16px' }}>
+                    <div className="plan-price">{plan.price}</div>
+                    <div className="price-period">one-time</div>
                   </div>
+                  <p className="plan-description">{plan.description}</p>
+
+                  {/* Features List */}
+                  <div className="features-list">
+                    {plan.includedFeatures.map((feature, index) => (
+                      <div key={`included-${index}`} className="feature-item">
+                        <Check size={18} className="text-green-500 feature-icon" />
+                        <span className="feature-text">{feature}</span>
+                      </div>
+                    ))}
+                    
+                    {plan.excludedFeatures && plan.excludedFeatures.map((feature, index) => (
+                      <div key={`excluded-${index}`} className="feature-item excluded">
+                        <X size={18} className="text-gray-400 feature-icon" />
+                        <span className="feature-text">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <button className="cta-button">
+                    {plan.buttonText}
+                  </button>
                 </div>
-              )}
-
-              {/* Plan Header */}
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.title}</h3>
-                <div className="text-4xl font-bold text-gray-900 mb-2">{plan.price}</div>
-                <p className="text-gray-600 text-sm">one-time</p>
-                <p className="text-gray-700 mt-4 leading-relaxed">{plan.description}</p>
               </div>
-
-              {/* Features List */}
-              <div className="px-8 pb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">Included Features:</h4>
-                <div className="space-y-3 mb-6">
-                  {plan.includedFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <Check size={20} className="text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Excluded Features (if any) */}
-                {plan.excludedFeatures && plan.excludedFeatures.length > 0 && (
-                  <>
-                    <h4 className="font-semibold text-gray-900 mb-4">Not Included:</h4>
-                    <div className="space-y-3 mb-6">
-                      {plan.excludedFeatures.map((feature, index) => (
-                        <div key={index} className="flex items-start">
-                          <X size={20} className="text-red-500 mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
-
-                {/* Call to Action Button */}
-                <button className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-orange-600 transition-colors shadow-md hover:shadow-lg">
-                  {plan.buttonText}
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
-};
+}

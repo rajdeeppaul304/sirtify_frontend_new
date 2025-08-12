@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../../constants/data";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [moreOpen, setMoreOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const currentPath = window.location.pathname;
 
   const handleNavigation = (href: string) => {
@@ -22,6 +23,8 @@ export const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+    // Close mobile menu after navigation
+    setMobileMenuOpen(false);
   };
 
   return (
