@@ -13,8 +13,12 @@ export const Header = () => {
       {/* Logo */}
       <Link to="/" className="flex items-center gap-3">
         <img src={logoImage} alt="Logo" className="w-10 h-10 drop-shadow-sm" />
-        <span className="text-xl font-bold text-gray-800">SPP</span>
+  
       </Link>
+ 
+        {/* <span className="text-xl font-bold text-gray-800">SPP</span> */}
+      </div>
+ 
 
       {/* Navigation */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">

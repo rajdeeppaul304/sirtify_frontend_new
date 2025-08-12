@@ -1,61 +1,127 @@
+import { Facebook, Twitter, Youtube, Mail, Phone, MessageCircle, HelpCircle } from 'lucide-react';
+
 export const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h4 className="text-lg font-bold text-gray-900 mb-2">Sirtify</h4>
-          <p className="text-gray-600 text-sm">
-            Skill • Practice • Progress platform helping learners build real
-            experience and transform careers.
-          </p>
-        </div>
-        <div>
-          <h5 className="text-sm font-semibold text-gray-900 mb-3">Company</h5>
-          <ul className="space-y-2 text-sm text-gray-600">
-            <li>
-              <a href="/about" className="hover:text-orange-500">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#programs" className="hover:text-orange-500">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a href="#careers" className="hover:text-orange-500">
-                Careers
-              </a>
-            </li>
-            <li>
-              <a href="#blog" className="hover:text-orange-500">
-                Blog
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="text-sm font-semibold text-gray-900 mb-3">Contact</h5>
-          <ul className="space-y-2 text-sm text-gray-600">
-            <li>support@sirtify.com</li>
-            <li>+91 00000 00000</li>
-            <li>Mon - Fri, 9am - 6pm IST</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-xs text-gray-500 flex items-center justify-between">
-          <span>
-            © {new Date().getFullYear()} Sirtify. All rights reserved.
-          </span>
-          <div className="space-x-4">
-            <a href="#privacy" className="hover:text-orange-500">
-              Privacy
-            </a>
-            <a href="#terms" className="hover:text-orange-500">
-              Terms
-            </a>
+    <footer className="w-full bg-[#FEF7F1] pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Orange separator line */}
+        <div className="w-full h-0.5 bg-orange-500 mb-16"></div>
+
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          {/* Left Section: Get in Touch with Sirtifai */}
+          <div className="lg:col-span-2">
+            {/* Logo and Heading */}
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-md overflow-hidden">
+                <img 
+                  src="/assets/logo.png" 
+                  alt="Sirtifai Logo"
+                  className="w-8 h-8 object-contain"
+                  onError={(e) => {
+                    // Fallback to text if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback text */}
+                <div className="w-8 h-8 bg-orange-500 rounded-md flex items-center justify-center text-white font-bold text-sm hidden">
+                  S
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">
+                Get in Touch with Sirtifai
+              </h3>
+            </div>
+
+            {/* Email Input and Button */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-full border-0 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors shadow-md">
+                Build Future
+              </button>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="flex gap-4 mb-8">
+              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
+                <Facebook size={20} />
+              </div>
+              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
+                <Twitter size={20} />
+              </div>
+              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
+                <Youtube size={20} />
+              </div>
+            </div>
+
+            {/* Recognitions */}
+            <div className="text-sm text-gray-500">
+              Recognitions: FERPA Compliance. | ISO: 9001:2015 | GST Registered
+            </div>
           </div>
+
+          {/* Legal Column */}
+          <div>
+            <h4 className="text-lg font-bold text-gray-800 mb-6">Legal</h4>
+            <div className="space-y-3">
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+                Terms & Conditions
+              </a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">
+                Refunds
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h4 className="text-lg font-bold text-gray-800 mb-6">Contact</h4>
+            <div className="space-y-3">
+              <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                <Mail size={16} className="mr-2" />
+                Emails
+              </a>
+              <a href="#" className="flex items-center text-gray-800 hover:text-gray-800 transition-colors">
+                <Phone size={16} className="mr-2" />
+                Phone
+              </a>
+              <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                <MessageCircle size={16} className="mr-2" />
+                WhatsApp
+              </a>
+              <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                <HelpCircle size={16} className="mr-2" />
+                Help Center
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links Column */}
+          <div>
+            <h4 className="text-lg font-bold text-gray-800 mb-6">Quick Links</h4>
+            <div className="space-y-3">
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">Home</a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">About Us</a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">Programs</a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
+              <a href="#" className="block text-gray-600 hover:text-gray-800 transition-colors">Careers</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-gray-500 text-sm">
+          ©Sirtifai 2025
         </div>
       </div>
     </footer>
