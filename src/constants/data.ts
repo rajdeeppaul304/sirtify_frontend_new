@@ -29,7 +29,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
             // { label: "Blog", href: "#blog" },
             // { label: "Careers", href: "#careers" },
             // { label:"Certifcations",  href:"/certifications"},
-            // { label:"Insurance",  href:"/insurance"},
+            { label:"Insurance",  href:"/insurance"},
             // { label:"Media and Campaign",  href:"/media-and-campaign"},
             // { label:"Freelancer",  href:"/freelancer"},
             { label: "Sirtify International", href: "/sirtify-international" },
