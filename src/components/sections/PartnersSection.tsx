@@ -3,21 +3,21 @@ import { ACADEMIC_PARTNERS } from '../../constants/data';
 
 export const PartnersSection = () => {
   return (
-    <section className="w-full bg-white py-20 pb-8">
+    <section className="relative w-full bg-white py-20 pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-start gap-20">
+        <div className="flex flex-col justify-center items-center gap-20">
                            {/* Left Side - Large Wireframe Globe */}
                  <div className="flex-1 flex justify-center">
-                   <div className="w-[600px] h-[500px]">
+                   <div className="absolute left-[-10%] transform-3d top-[-30%] w-[700px] h-[700px]">
                      <RotatingGlobe />
                    </div>
                  </div>
           
           {/* Right Side - Partner Categories */}
-          <div className="flex-1 space-y-16">
+          <div className="flex flex-col justify-center items-center space-y-16">
                                {/* Main Heading */}
-                   <div className="text-left">
-                     <h2 className="text-5xl font-bold text-gray-900 mb-16">
+                   <div className="text-center">
+                     <h2 className="text-5xl font-bold text-gray-900 mb-16 w-[80%]">
                        Trusted By Leading Organisations..
                      </h2>
                    </div>

@@ -3,6 +3,44 @@ import { Download, Star } from 'lucide-react';
 export const InternationalHeroSection = () => {
   return (
     <section className="w-full py-20">
+          <style>
+            {`
+        .double-border-btn {
+            position: relative;
+            background: #1f2937;
+            color: white;
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .double-border-btn::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            background: transparent;
+            // border: 1px solid white;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+
+
+            border-radius: 9999px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .double-border-btn:hover {
+            background: #111827;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+            `}
+    </style>
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Text Content and CTA */}
@@ -26,12 +64,12 @@ export const InternationalHeroSection = () => {
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Start Your Global Career Button */}
-              <button className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-900 transition-colors shadow-md hover:shadow-lg">
-                Start Your Global Career
-              </button>
+<button className=" double-border-btn ">
+  Start Your Global Career
+</button>
 
               {/* Download Brochure Button */}
-              <button className="px-8 py-4 bg-orange-500 text-white rounded-lg font-semibold text-lg hover:bg-orange-600 transition-colors shadow-md hover:shadow-lg flex items-center gap-2">
+              <button className="px-8 py-4 bg-orange-500 text-white rounded-full font-semibold text-lg hover:bg-orange-600 transition-colors shadow-md hover:shadow-lg flex items-center gap-2">
                 <Download size={20} />
                 Download Brochure
               </button>
@@ -86,6 +124,14 @@ export const InternationalHeroSection = () => {
           </div>
         </div>
       </div>
+            <div className="w-full bg-white py-8 mt-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Transforming Careers Through Skills, Practice, And Progress
+          </h2>
+        </div>
+      </div>
+
     </section>
   );
 };
