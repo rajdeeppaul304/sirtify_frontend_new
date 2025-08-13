@@ -11,7 +11,7 @@ export const PartnersRecognitionSection = () => {
           <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-wider mb-6">
             CORPORATE PARTNERS
           </h3>
-          <div className="flex justify-center gap-8 w-full">
+          <div className="flex justify-center gap-8 sm:gap-30 w-full">
             {CERTIFICATIONS.map((cert) => (
               <div key={cert.id} className="flex flex-col items-center flex-1 max-w-48">
                 <div className="w-40 h-24 flex items-center justify-center mb-3">
@@ -45,7 +45,7 @@ export const PartnersRecognitionSection = () => {
           <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-wider mb-6">
             MEMBERSHIP & RECOGNITION
           </h3>
-          <div className="flex justify-center gap-8 w-full">
+          <div className="flex justify-center gap-8 sm:gap-30 w-full">
             {MEMBERSHIP_RECOGNITION.map((cert) => (
               <div key={cert.id} className="flex flex-col items-center flex-1 max-w-48">
                 <div className="w-40 h-24 flex items-center justify-center mb-3">
