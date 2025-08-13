@@ -17,16 +17,29 @@ import type {
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
-  { label: "About", href: "/about" },
+  // { label: "About", href: "/about" },
+  {
+    label: "About",
+    href: "/about",
+    hasDropdown: true,
+              dropdownItems: [
+
+            { label: "Why Sirtifai ", href: "/about" },
+            { label: "media and campaigns", href: "/media-and-campaign" },
+            { label: "insurance", href: "/insurance" },
+
+           ],
+  },
+
   {
     label: "Program",
     href: "/program",
     hasDropdown: true,
               dropdownItems: [
 
-            { label: "Skill Phase", href: "/program-skill" },
-            { label: "Practice Phase", href: "/program-practice" },
-            { label: "Progress Phase", href: "/program-progress" },
+            { label: "international ", href: "/program-skill" },
+            { label: "Freelancer ", href: "/program-practice" },
+            { label: "Spp", href: "/program-progress" },
 
            ],
 
