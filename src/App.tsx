@@ -27,6 +27,7 @@ import { CertificationsPage } from "./pages/CertificationsPage";
 import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
 import { ContactUsPage } from "./pages/ContactUsPage";
 import Program from "./pages/Program";
+import InsurancePage from "./pages/InsurancePage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -94,8 +95,15 @@ if (currentPath.startsWith("/program")) {
     return <RefundPolicyPage />;
   }
 
+
   if (currentPath === "/media-and-campaign") {
     return <MediaCampaign />;
+  }
+
+
+
+  if (currentPath === "/insurance") {
+    return <InsurancePage />;
   }
 
 

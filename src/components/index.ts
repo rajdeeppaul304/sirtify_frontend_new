@@ -34,6 +34,13 @@ export { ContactFeaturesBanner } from './sections/ContactFeaturesBanner';
 export { EmailSupportSection } from './sections/EmailSupportSection';
 export { PhoneSupportSection } from './sections/PhoneSupportSection';
 export { SupportServicesSection } from './sections/SupportServicesSection';
+export { InsuranceHeroSection } from './sections/InsuranceHeroSection';
+export { CoverageAtAGlanceSection } from './sections/CoverageAtAGlanceSection';
+export { PhaseByPhaseCoverageSection } from './sections/PhaseByPhaseCoverageSection';
+export { InsuranceNetworkSection } from './sections/InsuranceNetworkSection';
+export { HowToFileClaimSection } from './sections/HowToFileClaimSection';
+export { InsuranceSupportFAQSection } from './sections/InsuranceSupportFAQSection';
+export { InsuranceCTASection } from './sections/InsuranceCTASection';
 
 // UI Components
 export { Button } from './ui/Button';
