@@ -26,8 +26,8 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row justify-start gap-5 items-start sm:items-center">
             {/* Button */}
-            <div className="bg-[#284050] text-white rounded-full text-sm sm:text-base font-semibold flex items-center justify-between gap-3 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-[40vw] lg:w-full sm:w-[226px] h-[56px] sm:h-[64px] p-1">
-              <button className="border border-gray-border rounded-full w-[40vw] lg:w-full h-full flex justify-between pl-4 pr-1 py-4 sm:pl-6 sm:py-5 items-center gap-2 font-open-sans">
+            <div className="bg-[#284050] text-white rounded-full text-sm sm:text-base font-semibold flex items-center justify-between gap-3 hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 w-[55vw] lg:w-full sm:w-[226px] h-[56px] sm:h-[64px] p-1">
+              <button className="border border-gray-border rounded-full w-[55vw] lg:w-full h-full flex justify-between pl-4 pr-1 py-4 sm:pl-6 sm:py-5 items-center gap-2 font-open-sans">
                 Book A Call
                 <div className="rounded-full p-3 bg-[#bdbdbd] flex justify-center items-center">
                   <Phone size={18} />
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             Join SPP Now
           </h2>
 
-          <div className="flex  lg:flex-col sm:flex-row pb-12 lg:pb-0 gap-3 sm:gap-4 w-full">
+          <div className="flex  flex-col sm:flex-row  pb-12 lg:pb-0 gap-3 sm:gap-4 w-full">
             {SPP_OPTIONS.map((option) => (
               <button
                 key={option.id}
@@ -63,9 +63,9 @@ export const HeroSection = () => {
       </div>
 
       {/* Right Side with Image */}
-      <div className="relative flex justify-center items-center mt-10 lg:mt-0 h-auto lg:h-[600px] w-full lg:w-auto">
+      <div className="relative flex justify-center items-center mt-10 lg:mt-0 h-auto lg:h-[500px] w-full lg:w-auto">
         <img
-          className="object-contain max-w-[90%] sm:max-w-[400px] lg:max-w-none lg:flex"
+          className="object-contain max-w-[90%] sm:max-w-[600px] lg:flex"
           src={heroImage}
           alt="Woman Holding Book"
         />
