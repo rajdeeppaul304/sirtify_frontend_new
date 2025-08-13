@@ -28,6 +28,8 @@ import PartnerLogo4 from "../../assets/Company logo (4).svg";
 import PartnerLogo5 from "../../assets/Company logo (5).svg";
 import PartnerLogo6 from "../../assets/Company logo (6).svg";
 
+import UniversityPartners from "./UniversityPartners";
+
 import MissionVisionGoals from './MissionVisionGoals'; 
 import UpcomingProjectsHero from './UpcomingProjects'; 
 import TeamMemberCarousel from './TeamMember'; 
@@ -327,6 +329,8 @@ export const AboutUsPage = () => {
 <UpcomingProjectsHero/>
 
 <TeamMemberCarousel/>
+
+<UniversityPartners/>
 
 <CareerSection/>
 
