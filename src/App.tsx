@@ -68,12 +68,12 @@ export default function App() {
 
   if (currentPath === "/program") {
     return <Program />;
-
+  }
   if (currentPath.startsWith("/program")) {
     // Extract variant from the path
     const variant = currentPath.split("-")[1] || null;
 
-    return <Program variant_url={variant} />;
+    return <Program variant_url ={variant} />;
 
   }
 
@@ -147,3 +147,4 @@ export default function App() {
     </div>
   );
 }
+
