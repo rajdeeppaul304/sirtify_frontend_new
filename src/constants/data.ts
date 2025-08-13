@@ -22,26 +22,26 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     label: "About",
     href: "/about",
     hasDropdown: true,
-              dropdownItems: [
+    dropdownItems: [
 
-            { label: "Why Sirtifai ", href: "/about" },
-            { label: "media and campaigns", href: "/media-and-campaign" },
-            { label: "insurance", href: "/insurance" },
+      { label: "Why Sirtifai ", href: "/about" },
+      { label: "media and campaigns", href: "/media-and-campaign" },
+      { label: "insurance", href: "/insurance" },
 
-           ],
+    ],
   },
 
   {
     label: "Program",
     href: "/program",
     hasDropdown: true,
-              dropdownItems: [
+    dropdownItems: [
 
-            { label: "international ", href: "/program-skill" },
-            { label: "Freelancer ", href: "/program-practice" },
-            { label: "Spp", href: "/program-progress" },
+      { label: "International ", href: "/program-skill" },
+      { label: "Freelancer ", href: "/program-practice" },
+      { label: "Spp", href: "/program-progress" },
 
-           ],
+    ],
 
 
   },
@@ -51,17 +51,17 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     label: "More",
     href: "#",
     hasDropdown: true,
-              dropdownItems: [
-            // { label: "Blog", href: "#blog" },
-            // { label: "Careers", href: "#careers" },
-            // { label:"Certifcations",  href:"/certifications"},
-            { label:"Insurance",  href:"/insurance"},
-            // { label:"Media and Campaign",  href:"/media-and-campaign"},
-            // { label:"Freelancer",  href:"/freelancer"},
-            { label: "Sirtify International", href: "/sirtify-international" },
-            { label: "Contact Us", href: "/contact" },
-            // { label: "FAQ", href: "/faq" },         
-           ],
+    dropdownItems: [
+      // { label: "Blog", href: "#blog" },
+      // { label: "Careers", href: "#careers" },
+      // { label:"Certifcations",  href:"/certifications"},
+      { label: "Insurance", href: "/insurance" },
+      // { label:"Media and Campaign",  href:"/media-and-campaign"},
+      // { label:"Freelancer",  href:"/freelancer"},
+      { label: "Sirtify International", href: "/sirtify-international" },
+      { label: "Contact Us", href: "/contact" },
+      // { label: "FAQ", href: "/faq" },         
+    ],
 
 
   },
@@ -229,25 +229,25 @@ export const ACADEMIC_PARTNERS = [
 ];
 
 export const MEMBERSHIP_RECOGNITION = [
-    {
+  {
     id: "nasscom",
     name: "NASSCOM",
     logo: "/assets/home/nasscom.png",
     color: "text-black",
   },
-    {
+  {
     id: "skill-india",
     name: "Skill India",
     logo: "/assets/home/skill-india.png",
     color: "text-black",
   },
-    {
+  {
     id: "msme",
     name: "MSME",
     logo: "/assets/home/msme.png",
     color: "text-black",
   },
-    {
+  {
     id: "bbb",
     name: "BBB",
     logo: "/assets/home/bbb.png",

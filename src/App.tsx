@@ -28,6 +28,7 @@ import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
 import { ContactUsPage } from "./pages/ContactUsPage";
 import Program from "./pages/Program";
 import InsurancePage from "./pages/InsurancePage";
+import { FreelancerPage } from "./pages/FreelancerPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -105,6 +106,11 @@ if (currentPath.startsWith("/program")) {
   if (currentPath === "/insurance") {
     return <InsurancePage />;
   }
+  
+  if (currentPath === "/freelancer") {
+    return <FreelancerPage />;
+  }
+
 
 
   // Default landing page
