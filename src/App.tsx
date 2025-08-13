@@ -12,6 +12,7 @@ import {
   Footer,
 } from "./components";
 import { AboutUs } from "./pages/AboutUs";
+import { MediaCampaign } from "./pages/MediaCampaign";
 
 
 import CancellationPolicyPage from "./pages/CancellationPolicy";
@@ -92,6 +93,11 @@ if (currentPath.startsWith("/program")) {
     if (currentPath === "/refund-policy") {
     return <RefundPolicyPage />;
   }
+
+  if (currentPath === "/media-and-campaign") {
+    return <MediaCampaign />;
+  }
+
 
   // Default landing page
   return (

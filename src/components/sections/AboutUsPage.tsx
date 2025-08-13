@@ -284,7 +284,7 @@ export const AboutUsPage = () => {
           desc: "Earn ₹12K–₹35K/month during the Practice Phase.",
         },
         {
-          title: "Verified Payroll (Peario™)",
+          title: "Verified Payroll (DEEL™)",
           desc: "EPF/ESI coverage for domestic plans, and international payroll for overseas roles.",
         },
         {

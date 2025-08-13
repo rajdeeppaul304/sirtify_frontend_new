@@ -9,10 +9,10 @@ export const ProgramTracksSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-orange-500 font-open-sans text-sm font-semibold uppercase tracking-wider mb-3">
+          <h2 className="text-orange-500 font-open-sans text-lg font-semibold uppercase tracking-wider mb-3">
             Program Tracks Overview
           </h2>
-          <h3 className="text-4xl font-bold text-gray-900 font-open-sans">
+          <h3 className="text-5xl font-bold text-gray-900 font-open-sans">
             Choose Your Path To <span className="text-orange-500">Success</span>
           </h3>
         </div>
@@ -78,11 +78,11 @@ export const ProgramTracksSection = () => {
                 </div>
 
                 {/* Button */}
-                <div className="text-center">
+                <div className="text-center w-60">
                   <Button
                     variant={isHighlighted ? 'primary' : 'outline'}
                     size="md"
-                    className={`w-full ${
+                    className={`w-full h-[60px] ${
                       isHighlighted 
                         ? 'bg-orange-50 text-orange-500 hover:bg-gray-50 border-white' 
                         : 'border-orange-500 text-orange-500 hover:bg-white'

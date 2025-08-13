@@ -1,6 +1,6 @@
 import { Phone, CheckCircle2, TrendingUp, ArrowRight } from 'lucide-react';
 import { SPP_OPTIONS } from '../../constants/data';
-import heroImage from "/assets/hero-image.png";
+import heroImage from "/assets/home/girl.png";
 import star from '/assets/star.png';
 
 export const HeroSection = () => {
@@ -13,8 +13,8 @@ export const HeroSection = () => {
           <div className='relative w-full'>
             <img className='absolute right-[20%] lg:right-[-1%] top-[-14%] w-[30px] h-[30px]' src={star} alt="Star" />
 
-            <h1 className="text-[3.5rem] lg:text-[4.5rem] leading-[100%] font-semibold font-open-sans text-black">
-              Unlock Your Potential Launch Your <span className='text-[#FE7642]'>Career</span>
+            <h1 className="text-[3.5rem] lg:text-[4rem] leading-[100%] font-semibold font-open-sans text-black">
+              Unlock Your Potential <br /> Launch  Your <span className='text-[#FE7642]'>Career</span>
             </h1>
           </div>
 
