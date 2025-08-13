@@ -628,7 +628,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -646,7 +646,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
@@ -1334,7 +1334,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -1352,7 +1352,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
