@@ -57,9 +57,13 @@ export default function App() {
     return <LearnersPage />;
   }
 
-  if (currentPath === "/program") {
-    return <Program />;
-  }
+if (currentPath.startsWith("/program")) {
+  // Extract variant from the path
+  const variant = currentPath.split("-")[1] || null;
+
+  return <Program variant_url={variant} />;
+}
+
 
   if (currentPath === "/certifications") {
     return <CertificationsPage />;

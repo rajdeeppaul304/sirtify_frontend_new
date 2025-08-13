@@ -18,7 +18,20 @@ import type {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "/program" },
+  {
+    label: "Program",
+    href: "/program",
+    hasDropdown: true,
+              dropdownItems: [
+
+            { label: "Skill Phase", href: "/program-skill" },
+            { label: "Practice Phase", href: "/program-practice" },
+            { label: "Progress Phase", href: "/program-progress" },
+
+           ],
+
+
+  },
   { label: "Learners", href: "/learners" },
   { label: "Certifications", href: "/certifications" },
   {
@@ -162,42 +175,69 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 
 export const CERTIFICATIONS = [
   {
-    id: "aws",
-    name: "aws",
-    logo: "/assets/cert1.png",
+    id: "deel",
+    name: "deel",
+    logo: "/assets/home/deel.png",
     color: "text-black",
   },
   {
-    id: "cloudera",
-    name: "CLOUDERA",
-    logo: "/assets/cert2.png",
-    color: "text-orange-500",
+    id: "walmart",
+    name: "walmart",
+    logo: "/assets/home/walmart.png",
+    color: "text-black",
   },
   {
-    id: "uipath",
-    name: "UiPath",
-    logo: "/assets/cert3.png",
-    color: "text-orange-500",
+    id: "amazon",
+    name: "amazon",
+    logo: "/assets/home/amazon.png",
+    color: "text-black",
   },
   {
-    id: "blueprism",
-    name: "blueprism",
-    logo: "/assets/cert4.png",
-    color: "text-blue-600",
+    id: "apple",
+    name: "apple",
+    logo: "/assets/home/apple.png",
+    color: "text-black",
   },
 ];
 
 export const ACADEMIC_PARTNERS = [
   {
-    id: "aws-academic",
-    name: "aws",
-    logo: "/assets/cert1.svg",
+    id: "nus",
+    name: "NUS",
+    logo: "/assets/home/nus.png",
     color: "text-black",
   },
   {
-    id: "cloudera-academic",
-    name: "CLOUDERA",
-    logo: "/assets/cert2.png",
+    id: "harvard",
+    name: "Harvard",
+    logo: "/assets/home/harvard.png",
     color: "text-orange-500",
   },
+];
+
+export const MEMBERSHIP_RECOGNITION = [
+    {
+    id: "nasscom",
+    name: "NASSCOM",
+    logo: "/assets/home/nasscom.png",
+    color: "text-black",
+  },
+    {
+    id: "skill-india",
+    name: "Skill India",
+    logo: "/assets/home/skill-india.png",
+    color: "text-black",
+  },
+    {
+    id: "msme",
+    name: "MSME",
+    logo: "/assets/home/msme.png",
+    color: "text-black",
+  },
+    {
+    id: "bbb",
+    name: "BBB",
+    logo: "/assets/home/bbb.png",
+    color: "text-black",
+  }
 ];
