@@ -1,4 +1,6 @@
 import { CERTIFICATIONS } from '../../constants/data';
+import { ACADEMIC_PARTNERS } from '../../constants/data';
+import { MEMBERSHIP_RECOGNITION } from '../../constants/data';
 
 export const PartnersRecognitionSection = () => {
   return (
@@ -44,7 +46,7 @@ export const PartnersRecognitionSection = () => {
             MEMBERSHIP & RECOGNITION
           </h3>
           <div className="flex justify-center gap-8 w-full">
-            {CERTIFICATIONS.map((cert) => (
+            {MEMBERSHIP_RECOGNITION.map((cert) => (
               <div key={cert.id} className="flex flex-col items-center flex-1 max-w-48">
                 <div className="w-40 h-24 flex items-center justify-center mb-3">
                   <img 

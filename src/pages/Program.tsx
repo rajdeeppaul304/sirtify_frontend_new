@@ -8,8 +8,13 @@ import AddOnsPricing from "../components/sections/program/addons-pricing";
 import WhoCanUse from "../components/sections/program/who-can-use";
 import FAQ from "../components/sections/program/faq";
 
-export default function Program() {
-  const [variant, setVariant] = useState<string>("skill");
+
+type ProgramProps = {
+  variant_url?: string | null;
+};
+
+export default function Program({ variant_url }: ProgramProps) {
+  const [variant, setVariant] = useState(variant_url || "skill");
   return (
     <main className="overflow-x-hidden">
       <Header />
@@ -623,7 +628,7 @@ export default function Program() {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -641,7 +646,7 @@ export default function Program() {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
@@ -1329,7 +1334,7 @@ export default function Program() {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -1347,7 +1352,7 @@ export default function Program() {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
