@@ -109,7 +109,7 @@ export const STEPS: Step[] = [
   {
     id: 2,
     title: "Paid Practice",
-    description: "Analyze your performance and create goegeous report",
+    description: "Analyze your performance and create gorgeous report",
     icon: Settings,
   },
   {

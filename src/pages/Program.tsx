@@ -7,12 +7,7 @@ import Features from "../components/sections/program/features";
 import AddOnsPricing from "../components/sections/program/addons-pricing";
 import WhoCanUse from "../components/sections/program/who-can-use";
 import FAQ from "../components/sections/program/faq";
-<<<<<<< Updated upstream
 
-export default function Program() {
-  const [variant, setVariant] = useState<string>("skill");
-=======
-import Pricing from "../components/sections/program/pricing";
 
 type ProgramProps = {
   variant_url?: string | null;
@@ -20,10 +15,6 @@ type ProgramProps = {
 
 export default function Program({ variant_url }: ProgramProps) {
   const [variant, setVariant] = useState(variant_url || "skill");
-
-  console.log(variant);
-
->>>>>>> Stashed changes
   return (
     <main className="overflow-x-hidden">
       <Header />
@@ -38,7 +29,6 @@ export default function Program({ variant_url }: ProgramProps) {
       {/* features */}
       <Features />
       {/* pricing */}
-<<<<<<< Updated upstream
       <section className="md:min-h-screen w-screen bg-[#FEF7F1] py-4 md:py-16">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8  justify-center min-h-screen w-screen">
           <div className="w-full flex flex-col items-center justify-center">
@@ -638,7 +628,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -656,7 +646,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
@@ -1344,7 +1334,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       Advanced Skill Training
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -1362,7 +1352,7 @@ export default function Program({ variant_url }: ProgramProps) {
                       />
                     </svg>
                     <p className="text-sm text-[#1F2937]">ESI benefits</p>
-                  </div>
+                  </div> */}
 
                   <div className="md:max-w-2xl mx-auto mt-4 md:mt-8">
                     <button className="w-full text-white bg-[#FE7642] rounded-full py-2 px-3 text-sm sm:text-base">
@@ -1594,9 +1584,6 @@ export default function Program({ variant_url }: ProgramProps) {
           )}
         </div>
       </section>
-=======
-      <Pricing variant={variant} setVariant={setVariant} />
->>>>>>> Stashed changes
 
       {/* Adds on pricing */}
 
