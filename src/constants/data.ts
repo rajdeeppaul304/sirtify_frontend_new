@@ -18,7 +18,20 @@ import type {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "/program" },
+  {
+    label: "Program",
+    href: "/program",
+    hasDropdown: true,
+              dropdownItems: [
+
+            { label: "Skill Phase", href: "/program-skill" },
+            { label: "Practice Phase", href: "/program-practice" },
+            { label: "Progress Phase", href: "/program-progress" },
+
+           ],
+
+
+  },
   { label: "Learners", href: "/learners" },
   { label: "Certifications", href: "/certifications" },
   {

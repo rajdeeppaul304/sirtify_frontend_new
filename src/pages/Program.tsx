@@ -8,8 +8,13 @@ import AddOnsPricing from "../components/sections/program/addons-pricing";
 import WhoCanUse from "../components/sections/program/who-can-use";
 import FAQ from "../components/sections/program/faq";
 
-export default function Program() {
-  const [variant, setVariant] = useState<string>("skill");
+
+type ProgramProps = {
+  variant_url?: string | null;
+};
+
+export default function Program({ variant_url }: ProgramProps) {
+  const [variant, setVariant] = useState(variant_url || "skill");
   return (
     <main className="overflow-x-hidden">
       <Header />

@@ -103,10 +103,10 @@ export const Footer = () => {
                 <Phone size={16} className="mr-2" />
                 Phone
               </a>
-              <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+              {/* <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
                 <MessageCircle size={16} className="mr-2" />
                 WhatsApp
-              </a>
+              </a> */}
               <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
                 <HelpCircle size={16} className="mr-2" />
                 Help Center

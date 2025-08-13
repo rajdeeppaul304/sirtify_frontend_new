@@ -16,7 +16,7 @@ export const PartnersSection = () => {
           {/* Right Side - Partner Categories */}
           <div className="flex flex-col justify-center items-center space-y-16">
                                {/* Main Heading */}
-                   <div className="text-center">
+                   <div className="text-center" style={{ display: 'flex', justifyContent: 'center' }}>
                      <h2 className="text-5xl font-bold text-gray-900 mb-16 w-[80%]">
                        Trusted By Leading Organisations..
                      </h2>

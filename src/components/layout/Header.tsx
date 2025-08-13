@@ -4,8 +4,9 @@ import { NAVIGATION_ITEMS } from "../../constants/data";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
-  const [moreOpen, setMoreOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null); // Separate state for mobile dropdowns
   const currentPath = window.location.pathname;
 
   const handleNavigation = (href: string) => {
@@ -27,6 +28,18 @@ export const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleDesktopDropdownEnter = (itemLabel) => {
+    setOpenDropdown(itemLabel);
+  };
+
+  const handleDesktopDropdownLeave = () => {
+    setOpenDropdown(null);
+  };
+
+  const toggleMobileDropdown = (itemLabel) => {
+    setMobileDropdownOpen(mobileDropdownOpen === itemLabel ? null : itemLabel);
+  };
+
   return (
     <>
       {/* Fixed Header */}
@@ -46,13 +59,14 @@ export const Header = () => {
         <div className="hidden lg:flex items-center gap-8 font-open-sans text-[1rem] text-black font-normal">
           {NAVIGATION_ITEMS.map((item) => {
             const isActive = currentPath === item.href;
+            const isDropdownOpen = openDropdown === item.label;
             
             return (
               <div key={item.label} className="relative">
                 {item.hasDropdown ? (
                   <div
-                    onMouseEnter={() => setMoreOpen(true)}
-                    onMouseLeave={() => setMoreOpen(false)}
+                    onMouseEnter={() => handleDesktopDropdownEnter(item.label)}
+                    onMouseLeave={handleDesktopDropdownLeave}
                   >
                     <button className="flex items-center gap-1 hover:text-orange-500 transition-colors">
                       {item.label}
@@ -61,7 +75,7 @@ export const Header = () => {
                         className="transition-transform duration-200"
                       />
                     </button>
-                    {moreOpen && item.dropdownItems && (
+                    {isDropdownOpen && item.dropdownItems && (
                       <div className="absolute top-full mt-2 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50">
                         {item.dropdownItems.map((dropdownItem) => (
                           <a
@@ -117,8 +131,8 @@ export const Header = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setMobileMenuOpen(false)} />
       )}
 
-      {/* Mobile Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${
+      {/* Mobile Menu - Full Width */}
+      <div className={`fixed top-0 right-0 h-full w-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${
         mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       } lg:hidden`}>
         
@@ -137,22 +151,23 @@ export const Header = () => {
         <div className="flex flex-col flex-1 overflow-y-auto py-4">
           {NAVIGATION_ITEMS.map((item) => {
             const isActive = currentPath === item.href;
+            const isMobileDropdownOpen = mobileDropdownOpen === item.label;
             
             return (
               <div key={item.label}>
                 {item.hasDropdown ? (
                   <div>
                     <button 
-                      onClick={() => setMoreOpen(!moreOpen)}
+                      onClick={() => toggleMobileDropdown(item.label)}
                       className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-orange-50 hover:text-orange-500 transition-colors"
                     >
                       <span className="font-open-sans text-base">{item.label}</span>
                       <ChevronDown
                         size={16}
-                        className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`}
+                        className={`transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`}
                       />
                     </button>
-                    {moreOpen && item.dropdownItems && (
+                    {isMobileDropdownOpen && item.dropdownItems && (
                       <div className="bg-gray-50">
                         {item.dropdownItems.map((dropdownItem) => (
                           <a
