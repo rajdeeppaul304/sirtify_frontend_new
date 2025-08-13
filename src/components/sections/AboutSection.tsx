@@ -8,11 +8,11 @@ export const AboutSection = () => {
           {/* Left Side - About Content */}
           <div className="w-full flex flex-col justify-start items-start gap-20">
             {/* Header */}
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
+            <div className='w-full flex flex-col justify-start items-start gap-3 '>
               <p className="text-orange-500 text-sm font-semibold font-open-sans uppercase tracking-wider mb-3">About Sirtifai</p>
-              <h2 className="text-4xl font-bold text-gray-900 font-open-sans">Sirtifai Is India's Only</h2>
-              <h3 className="text-6xl font-bold text-gray-900 leading-tight font-open-sans">
-                Skill • Practice • Progress Platform
+              <h2 className="text-6xl text-gray-900 font-open-sans">Sirtifai Is India's Only</h2>
+              <h3 className="text-6xl  text-gray-900 leading-tight font-open-sans tracking-tight">
+               <span className='font-bold '>Skill • Practice • Progress</span> Platform
               </h3>
             </div>
 
@@ -30,8 +30,8 @@ export const AboutSection = () => {
                 </div>
                 
                 <div className='flex flex-col gap-4'>
-                  <button className="px-8 py-4 bg-orange-500 text-white rounded-xl text-lg font-semibold flex items-center gap-3 hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                    <Share2 size={20} />
+                  <button className="px-8 py-4 bg-[#FC4C03] text-white rounded-full text-lg font-semibold flex items-center gap-3 hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                    <img src="/assets/home/transform-icon.svg" alt="Share Icon" />
                     Transform Your Career With Sirtifai
                   </button> 
 
@@ -53,7 +53,7 @@ export const AboutSection = () => {
                         </div>
                         <div>
                           <p className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-2">Step {step.id}</p>
-                          <h4 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h4>
+                          <h4 className="text-2xl  text-gray-900 mb-3">{step.title}</h4>
                           <p className="text-gray-600 leading-relaxed text-base">
                             {step.description}
                           </p>
