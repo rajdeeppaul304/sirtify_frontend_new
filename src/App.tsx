@@ -26,6 +26,7 @@ import { CertificationsPage } from "./pages/CertificationsPage";
 import { SirtifyInternationalPage } from "./pages/SirtifyInternationalPage";
 import { ContactUsPage } from "./pages/ContactUsPage";
 import Program from "./pages/Program";
+import InsurancePage from "./pages/InsurancePage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -87,6 +88,10 @@ export default function App() {
 
     if (currentPath === "/refund-policy") {
     return <RefundPolicyPage />;
+  }
+
+  if (currentPath === "/insurance") {
+    return <InsurancePage />;
   }
 
   // Default landing page
