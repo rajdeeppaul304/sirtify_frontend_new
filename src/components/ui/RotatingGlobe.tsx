@@ -10,97 +10,156 @@ export const RotatingGlobe = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-               // Set canvas size
-           const size = 500;
-           canvas.width = size;
-           canvas.height = size;
+    // Set canvas size
+    const size = 500;
+    canvas.width = size;
+    canvas.height = size;
 
     let rotation = 0;
 
+    // Viewing angle to match the image - tilted view from above-right
+    const tiltX = -0.3; // Tilt down slightly
+    const tiltY = 0.4;  // Tilt to show the right side
+
+    const project3D = (x, y, z) => {
+      // Apply rotation around Y axis
+      const cosRot = Math.cos(rotation);
+      const sinRot = Math.sin(rotation);
+      const rotatedX = x * cosRot - z * sinRot;
+      const rotatedZ = x * sinRot + z * cosRot;
+
+      // Apply viewing angle transformations
+      const cosTiltX = Math.cos(tiltX);
+      const sinTiltX = Math.sin(tiltX);
+      const cosTiltY = Math.cos(tiltY);
+      const sinTiltY = Math.sin(tiltY);
+
+      // Rotate around X axis (tilt down)
+      const tiltedY = y * cosTiltX - rotatedZ * sinTiltX;
+      const tiltedZ = y * sinTiltX + rotatedZ * cosTiltX;
+
+      // Rotate around Y axis (viewing angle)
+      const finalX = rotatedX * cosTiltY + tiltedZ * sinTiltY;
+      const finalZ = -rotatedX * sinTiltY + tiltedZ * cosTiltY;
+
+      // Project to 2D with perspective
+      const perspective = 800;
+      const scale = perspective / (perspective + finalZ);
+      
+      return {
+        x: size / 2 + finalX * scale,
+        y: size / 2 + tiltedY * scale,
+        visible: finalZ > -200 // Only draw if in front
+      };
+    };
+
     const drawGlobe = () => {
-      // Clear canvas
+      // Clear canvas with transparent background
       ctx.clearRect(0, 0, size, size);
 
-                   const centerX = size / 2;
-             const centerY = size / 2;
-             const radius = 200;
+      const radius = 180;
 
-      // Draw latitude lines (horizontal circles)
-      for (let lat = -80; lat <= 80; lat += 20) {
-        const latRadius = radius * Math.cos((lat * Math.PI) / 180);
-        const y = centerY + (lat * radius) / 90;
+      // Draw latitude lines
+      for (let lat = -75; lat <= 75; lat += 15) {
+        const latRad = (lat * Math.PI) / 180;
+        const circleRadius = radius * Math.cos(latRad);
+        const y = radius * Math.sin(latRad);
 
         ctx.beginPath();
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 1;
-        ctx.ellipse(centerX, y, latRadius, Math.abs(latRadius * 0.3), 0, 0, 2 * Math.PI);
-        ctx.stroke();
-      }
+        ctx.strokeStyle = '#333';
+        ctx.lineWidth = lat === 0 ? 1.5 : 1; // Slightly thicker equator
 
-      // Draw longitude lines (vertical circles)
-      for (let lon = 0; lon < 360; lon += 30) {
-        const lonRad = (lon * Math.PI) / 180 + rotation;
-        
-        ctx.beginPath();
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 1;
-        
-        // Draw longitude line as an ellipse
-        for (let i = 0; i < 180; i++) {
-          const lat = (i - 90) * Math.PI / 180;
-          const x = centerX + radius * Math.cos(lat) * Math.cos(lonRad);
-          const y = centerY + radius * Math.sin(lat);
+        let firstPoint = true;
+        for (let lon = 0; lon <= 360; lon += 3) {
+          const lonRad = (lon * Math.PI) / 180;
+          const x = circleRadius * Math.cos(lonRad);
+          const z = circleRadius * Math.sin(lonRad);
           
-          if (i === 0) {
-            ctx.moveTo(x, y);
+          const projected = project3D(x, y, z);
+          
+          if (projected.visible) {
+            if (firstPoint) {
+              ctx.moveTo(projected.x, projected.y);
+              firstPoint = false;
+            } else {
+              ctx.lineTo(projected.x, projected.y);
+            }
           } else {
-            ctx.lineTo(x, y);
+            firstPoint = true;
           }
         }
         ctx.stroke();
       }
 
-      // Draw equator (thicker line)
-      ctx.beginPath();
-      ctx.strokeStyle = '#000';
-      ctx.lineWidth = 2;
-      ctx.ellipse(centerX, centerY, radius, radius * 0.3, 0, 0, 2 * Math.PI);
-      ctx.stroke();
+      // Draw longitude lines
+      for (let lon = 0; lon < 180; lon += 15) {
+        ctx.beginPath();
+        ctx.strokeStyle = '#333';
+        ctx.lineWidth = 1;
 
-      // Draw prime meridian (thicker line)
-      ctx.beginPath();
-      ctx.strokeStyle = '#000';
-      ctx.lineWidth = 2;
-      for (let i = 0; i < 180; i++) {
-        const lat = (i - 90) * Math.PI / 180;
-        const x = centerX + radius * Math.cos(lat) * Math.cos(rotation);
-        const y = centerY + radius * Math.sin(lat);
-        
-        if (i === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
-      }
-      ctx.stroke();
-
-      // Add some grid points for more detail
-      for (let lat = -60; lat <= 60; lat += 30) {
-        for (let lon = 0; lon < 360; lon += 45) {
+        let firstPoint = true;
+        for (let lat = -90; lat <= 90; lat += 2) {
           const latRad = (lat * Math.PI) / 180;
-          const lonRad = (lon * Math.PI) / 180 + rotation;
+          const lonRad = (lon * Math.PI) / 180;
           
-          const x = centerX + radius * Math.cos(latRad) * Math.cos(lonRad);
-          const y = centerY + radius * Math.sin(latRad);
+          const x = radius * Math.cos(latRad) * Math.cos(lonRad);
+          const y = radius * Math.sin(latRad);
+          const z = radius * Math.cos(latRad) * Math.sin(lonRad);
+          
+          const projected = project3D(x, y, z);
+          
+          if (projected.visible) {
+            if (firstPoint) {
+              ctx.moveTo(projected.x, projected.y);
+              firstPoint = false;
+            } else {
+              ctx.lineTo(projected.x, projected.y);
+            }
+          } else {
+            firstPoint = true;
+          }
+        }
+        ctx.stroke();
+      }
+
+      // Draw polar convergence lines (the radiating lines from the poles)
+      const drawPolarLines = (poleY) => {
+        for (let lon = 0; lon < 360; lon += 15) {
+          const lonRad = (lon * Math.PI) / 180;
           
           ctx.beginPath();
-          ctx.fillStyle = '#000';
-          ctx.arc(x, y, 1.5, 0, 2 * Math.PI);
-          ctx.fill();
-        }
-      }
+          ctx.strokeStyle = '#333';
+          ctx.lineWidth = 0.8;
 
-      rotation += 0.005;
+          let firstPoint = true;
+          for (let lat = 75; lat <= 90; lat += 1) {
+            const latRad = (lat * Math.PI) / 180;
+            const circleRadius = radius * Math.cos(latRad);
+            
+            const x = circleRadius * Math.cos(lonRad);
+            const y = poleY > 0 ? radius * Math.sin(latRad) : -radius * Math.sin(latRad);
+            const z = circleRadius * Math.sin(lonRad);
+            
+            const projected = project3D(x, y, z);
+            
+            if (projected.visible) {
+              if (firstPoint) {
+                ctx.moveTo(projected.x, projected.y);
+                firstPoint = false;
+              } else {
+                ctx.lineTo(projected.x, projected.y);
+              }
+            }
+          }
+          ctx.stroke();
+        }
+      };
+
+      // Draw polar convergence for both poles
+      drawPolarLines(1);  // North pole
+      drawPolarLines(-1); // South pole
+
+      rotation += 0.008;
       requestAnimationFrame(drawGlobe);
     };
 
@@ -113,11 +172,10 @@ export const RotatingGlobe = () => {
 
   return (
     <div className="relative">
-                   <canvas
-               ref={canvasRef}
-               className="w-96 h-96"
-               style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))' }}
-             />
+      <canvas
+        ref={canvasRef}
+        className="w-[500px] h-[500px] object-contain"
+      />
     </div>
   );
 };
