@@ -7,9 +7,23 @@ import Features from "../components/sections/program/features";
 import AddOnsPricing from "../components/sections/program/addons-pricing";
 import WhoCanUse from "../components/sections/program/who-can-use";
 import FAQ from "../components/sections/program/faq";
+<<<<<<< Updated upstream
 
 export default function Program() {
   const [variant, setVariant] = useState<string>("skill");
+=======
+import Pricing from "../components/sections/program/pricing";
+
+type ProgramProps = {
+  variant_url?: string | null;
+};
+
+export default function Program({ variant_url }: ProgramProps) {
+  const [variant, setVariant] = useState(variant_url || "skill");
+
+  console.log(variant);
+
+>>>>>>> Stashed changes
   return (
     <main className="overflow-x-hidden">
       <Header />
@@ -24,6 +38,7 @@ export default function Program() {
       {/* features */}
       <Features />
       {/* pricing */}
+<<<<<<< Updated upstream
       <section className="md:min-h-screen w-screen bg-[#FEF7F1] py-4 md:py-16">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-8  justify-center min-h-screen w-screen">
           <div className="w-full flex flex-col items-center justify-center">
@@ -1579,6 +1594,9 @@ export default function Program() {
           )}
         </div>
       </section>
+=======
+      <Pricing variant={variant} setVariant={setVariant} />
+>>>>>>> Stashed changes
 
       {/* Adds on pricing */}
 

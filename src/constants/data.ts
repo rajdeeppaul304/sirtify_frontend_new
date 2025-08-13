@@ -18,7 +18,20 @@ import type {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
   { label: "About", href: "/about" },
+<<<<<<< Updated upstream
   { label: "Programs", href: "/program" },
+=======
+  {
+    label: "Program",
+    href: "/program",
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "International", href: "/sirtify-international" },
+      { label: "Freelancer", href: "/freelancer" },
+      { label: "SPP", href: "/spp" },
+    ],
+  },
+>>>>>>> Stashed changes
   { label: "Learners", href: "/learners" },
   { label: "Certifications", href: "/certifications" },
   {
@@ -26,10 +39,22 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     href: "#",
     hasDropdown: true,
     dropdownItems: [
+<<<<<<< Updated upstream
       { label: "Blog", href: "#blog" },
       { label: "Careers", href: "#careers" },
       { label: "Sirtify International", href: "/sirtify-international" },
       { label: "Contact Us", href: "/contact" },
+=======
+      // { label: "Blog", href: "#blog" },
+      // { label: "Careers", href: "#careers" },
+      // { label:"Certifcations",  href:"/certifications"},
+      // { label:"Insurance",  href:"/insurance"},
+      // { label:"Media and Campaign",  href:"/media-and-campaign"},
+      // { label:"Freelancer",  href:"/freelancer"},
+      { label: "Sirtify International", href: "/sirtify-international" },
+      { label: "Contact Us", href: "/contact" },
+      // { label: "FAQ", href: "/faq" },
+>>>>>>> Stashed changes
     ],
   },
 ];
@@ -194,3 +219,33 @@ export const ACADEMIC_PARTNERS = [
     color: "text-orange-500",
   },
 ];
+<<<<<<< Updated upstream
+=======
+
+export const MEMBERSHIP_RECOGNITION = [
+  {
+    id: "nasscom",
+    name: "NASSCOM",
+    logo: "/assets/home/nasscom.png",
+    color: "text-black",
+  },
+  {
+    id: "skill-india",
+    name: "Skill India",
+    logo: "/assets/home/skill-india.png",
+    color: "text-black",
+  },
+  {
+    id: "msme",
+    name: "MSME",
+    logo: "/assets/home/msme.png",
+    color: "text-black",
+  },
+  {
+    id: "bbb",
+    name: "BBB",
+    logo: "/assets/home/bbb.png",
+    color: "text-black",
+  },
+];
+>>>>>>> Stashed changes

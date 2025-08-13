@@ -1,10 +1,8 @@
-import React from "react";
-
 const Benefits = () => {
   return (
     <section className="md:min-h-screen pb-4 md:pb-0 w-screen bg-[#FEF7F1]">
       <div className="flex flex-col justify-center items-center max-w-7xl mx-auto min-h-screen w-screen">
-        <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize">
+        <h1 className="text-[30px] font-open-sans md:text-[60px] font-[600] text-black capitalize">
           Key Benefits
         </h1>
         <div className="bg-[#FC4C03] w-[80px] h-[4px]" />
@@ -32,7 +30,7 @@ const Benefits = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <h2 className="text-[#1F2937] text-xl font-[600]">
+                <h2 className="text-[#1F2937] font-inter text-xl font-[600]">
                   For Students
                 </h2>
               </div>
@@ -57,7 +55,7 @@ const Benefits = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
+                  <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                     No prior experience required – ideal for freshers &
                     final-year students
                   </span>
@@ -82,7 +80,7 @@ const Benefits = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
+                  <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                     Gain internship-level & freelance income before graduation
                   </span>
                 </div>
@@ -106,7 +104,7 @@ const Benefits = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
+                  <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                     Real work portfolio to crack your first job with confidence
                   </span>
                 </div>
@@ -130,7 +128,7 @@ const Benefits = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span className="text-[#4B5563] text-[16px] font-[400]">
+                  <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                     Lifetime support for job switching, even years later
                   </span>
                 </div>
@@ -159,7 +157,7 @@ const Benefits = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <h2 className="text-[#1F2937] text-xl font-[600]">
+              <h2 className="text-[#1F2937] font-inter text-xl font-[600]">
                 For Freelancers
               </h2>
             </div>
@@ -184,7 +182,7 @@ const Benefits = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-[#4B5563] text-[16px] font-[400]">
+                <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                   Guaranteed paid client projects with legal contracts
                 </span>
               </div>
@@ -208,7 +206,7 @@ const Benefits = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-[#4B5563] text-[16px] font-[400]">
+                <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                   Income via payroll (not just UPI or crypto) – great for
                   loans,Visas and Taxes.
                 </span>
@@ -233,7 +231,7 @@ const Benefits = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-[#4B5563] text-[16px] font-[400]">
+                <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                   Verified experience you can showcase to global employers
                 </span>
               </div>
@@ -257,7 +255,7 @@ const Benefits = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-[#4B5563] text-[16px] font-[400]">
+                <span className="text-[#4B5563] font-inter text-[16px] font-[400]">
                   Support for freelance compliance, taxation, and contracts
                 </span>
               </div>

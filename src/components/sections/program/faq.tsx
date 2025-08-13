@@ -38,7 +38,7 @@ const FAQ = () => {
     <section className="min-h-screen w-full py-4 md:py-16">
       <div className="min-h-screen w-full flex flex-col justify-center items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <h1 className="text-[30px] md:text-[60px] font-[600] text-black capitalize text-center w-full">
+          <h1 className="text-[30px] font-open-sans md:text-[60px] font-[600] text-black capitalize text-center w-full">
             Frequently Asked Questions
           </h1>
 
@@ -52,15 +52,15 @@ const FAQ = () => {
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className="w-full flex justify-between items-center p-5 text-left text-lg font-medium text-[#1F2937]"
+                  className="w-full font-inter flex justify-between items-center p-5 text-left text-lg font-medium text-[#1F2937]"
                 >
                   {faq.question}
-                  <span className="text-gray-500 text-2xl leading-none">
+                  <span className="text-gray-500 text-2xl leading-none fon-inter">
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="p-5 border-t border-gray-200 text-[#4B5563]">
+                  <div className="p-5 border-t border-gray-200 text-[#4B5563] font-inter">
                     {faq.answer}
                   </div>
                 )}
