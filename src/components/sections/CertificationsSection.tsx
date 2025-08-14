@@ -17,7 +17,9 @@ export const CertificationsSection = () => {
           </div>
 
           {/* Certification Logos - Centered */}
+ 
           <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-16">
+ 
             {CERTIFICATIONS.map((cert) => (
               <div key={cert.id} className="flex flex-col items-center">
                 <div className="w-40 h-24 flex items-center justify-center mb-4">

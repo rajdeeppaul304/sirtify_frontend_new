@@ -17,11 +17,11 @@ export const PhaseByPhaseCoverageSection = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Table Header */}
           <div className="bg-[#1f2937] text-white p-6">
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-3 gap-6">
               <div className="text-left font-bold">Program Phase</div>
               <div className="text-left font-bold">Coverage Type</div>
               <div className="text-left font-bold">Protection Details</div>
-              <div className="text-right font-bold">Claim Process</div>
+              {/* <div className="text-right font-bold">Claim Process</div> */}
             </div>
           </div>
 
@@ -29,7 +29,7 @@ export const PhaseByPhaseCoverageSection = () => {
           <div className="divide-y divide-gray-200">
             {/* Row 1: Skill Phase */}
             <div className="p-6">
-              <div className="grid grid-cols-4 gap-6 items-start">
+              <div className="grid grid-cols-3 gap-6 items-start">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-[#FE7642] rounded-lg flex items-center justify-center">
                     <GraduationCap className="w-4 h-4 text-white" />
@@ -41,21 +41,17 @@ export const PhaseByPhaseCoverageSection = () => {
                 </div>
                 <div className="text-left text-gray-600">
                   <ul className="space-y-1">
-                    <li>  Course completion guarantee</li>
-                    <li>  Platform access assurance</li>
-                    <li>  Learning materials availability</li>
+                    <li>Course completion guarantee</li>
+                    <li>Platform access assurance</li>
+                    <li>Learning materials availability</li>
                   </ul>
-                </div>
-                <div className="text-right">
-                  <span className="text-orange-600">Simple online form</span>
-                  <ArrowRight className="inline w-4 h-4 text-[#FE7642] ml-1" />
                 </div>
               </div>
             </div>
 
             {/* Row 2: Practice Phase */}
             <div className="p-6">
-              <div className="grid grid-cols-4 gap-6 items-start">
+              <div className="grid grid-cols-3 gap-6 items-start">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-[#FE7642] rounded-lg flex items-center justify-center">
                     <Monitor className="w-4 h-4 text-white" />
@@ -67,21 +63,17 @@ export const PhaseByPhaseCoverageSection = () => {
                 </div>
                 <div className="text-left text-gray-600">
                   <ul className="space-y-1">
-                    <li>  Client payment assurance</li>
-                    <li>  Monthly minimum income protection</li>
-                    <li>  Project continuity coverage</li>
+                    <li>Client payment assurance</li>
+                    <li>Monthly minimum income protection</li>
+                    <li>Project continuity coverage</li>
                   </ul>
-                </div>
-                <div className="text-right">
-                  <span className="text-orange-600">Documentation required</span>
-                  <ArrowRight className="inline w-4 h-4 text-[#FE7642] ml-1" />
                 </div>
               </div>
             </div>
 
             {/* Row 3: Progress Phase */}
             <div className="p-6">
-              <div className="grid grid-cols-4 gap-6 items-start">
+              <div className="grid grid-cols-3 gap-6 items-start">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-white" />
@@ -93,14 +85,10 @@ export const PhaseByPhaseCoverageSection = () => {
                 </div>
                 <div className="text-left text-gray-600">
                   <ul className="space-y-1">
-                    <li> Placement guarantee (program-specific)</li>
-                    <li> Career transition support</li>
-                    <li> Re-entry assistance if needed</li>
+                    <li>Placement guarantee (program-specific)</li>
+                    <li>Career transition support</li>
+                    <li>Re-entry assistance if needed</li>
                   </ul>
-                </div>
-                <div className="text-right">
-                  <span className="text-orange-600">Advisor consultation</span>
-                  <ArrowRight className="inline w-4 h-4 text-[#FE7642] ml-1" />
                 </div>
               </div>
             </div>

@@ -9,11 +9,12 @@ import PartnerLogo4 from "../../assets/Company logo (4).svg";
 import PartnerLogo5 from "../../assets/Company logo (5).svg";
 import PartnerLogo6 from "../../assets/Company logo (6).svg";
 
-import accLogo1 from "../../../public/assets/about/university_logos/AU_University_Horizontal_COLOR_RGB.png";
-import accLogo2 from "../../../public/assets/about/university_logos/Arcadia-logo-color.jpg";
-import accLogo3 from "../../../public/assets/about/university_logos/CWRU_University_Formal_No_Tag_RGB_Blue.jpg";
-import accLogo4 from "../../../public/assets/about/university_logos/columbia_logo_1.png";
-import accLogo5 from "../../../public/assets/about/university_logos/ECON_logo.jpg";
+import accLogo1 from "/assets/about/university_logos/AU_University_Horizontal_COLOR_RGB.png";
+import accLogo2 from "/assets/about/university_logos/Arcadia-logo-color.jpg";
+import accLogo3 from "/assets/about/university_logos/CWRU_University_Formal_No_Tag_RGB_Blue.jpg";
+import accLogo4 from "/assets/about/university_logos/columbia_logo_1.png";
+import accLogo5 from "/assets/about/university_logos/ECON_logo.jpg";
+import { Morquee } from '../ui/Morquee';
 // import accLogo6 from "../../assets/about/university_logos/Emerson-College-Logo.png";
 // import accLogo7 from "../../assets/about/university_logos/FOR-MSW_UniversityLogo_Short_RedBlack_RGB.png";
 
@@ -61,21 +62,13 @@ export const PartnersSection = () => {
               </h3>
               <div className="w-full overflow-hidden bg-white border-b border-gray-100">
                 <div className="relative py-8">
-                  <div className="flex animate-marquee space-x-24">
-                    {accLogos.map((src, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center justify-center flex-shrink-0 min-w-[120px]"
-                      >
-                        <img
-                          src={src}
-                          alt={`Partner ${i + 1}`}
-                          className="h-16 w-auto opacity-80 object-contain"
-                        />
-                      </div>
-                    ))}
+                {/* flex animate-marquee space-x-32 */}
+                  <div className="">
+                    <Morquee logos={accLogos} />
+
+                    
                   </div>
-                 
+         
                 </div>
               </div>
             </div>

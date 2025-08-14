@@ -35,10 +35,10 @@ const Hero = () => {
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
               <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
-                SPP INT <ArrowRight />
+              International  <ArrowRight />
               </button>
               <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
-                SPP FREELANCE <ArrowRight />
+                 FREELANCE <ArrowRight />
               </button>
               <button className="flex items-center justify-between sm:justify-center gap-4 bg-white shadow-[0_4px_4px_rgba(248,177,150,0.10)] p-4 text-[#FC4C03]">
                 SPP STUDENT <ArrowRight />
