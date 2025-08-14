@@ -12,7 +12,7 @@ export default function SuccessGallery() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="space-y-6">
             <img
               src="/creative-hands-project.png"
@@ -65,7 +65,7 @@ export default function SuccessGallery() {
         {/* Bottom Navigation */}
         <div className="flex items-center justify-center gap-4">
           <Button className="bg-[#ff7847] hover:bg-[#e56a3f] text-white px-8 py-3 rounded-full">Explore Gallery</Button>
-          <Button variant="outline" size="icon" className="rounded-full border-gray-300 bg-transparent">
+          <Button variant="outline"  className="rounded-full border-gray-300 bg-transparent">
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>

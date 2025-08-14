@@ -95,7 +95,7 @@ export const PartnersRecognitionSection = () => {
                   <img 
                     src={cert.logo} 
                     alt={cert.name}
-                    className="h-20 w-auto object-contain"
+                    className="h-28 sm:h-20 w-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
