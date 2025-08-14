@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NAVIGATION_ITEMS } from "../../constants/data";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ export const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null); // Separate state for mobile dropdowns
+  const dropdownTimeoutRef = useRef(null);
   const currentPath = window.location.pathname;
 
   const handleNavigation = (href: string) => {
@@ -29,11 +30,34 @@ export const Header = () => {
   };
 
   const handleDesktopDropdownEnter = (itemLabel) => {
+    // Clear any existing timeout
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
     setOpenDropdown(itemLabel);
   };
 
   const handleDesktopDropdownLeave = () => {
-    setOpenDropdown(null);
+    // Add a delay before closing the dropdown
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 300); // 300ms delay
+  };
+
+  const handleDropdownMenuEnter = () => {
+    // Clear timeout when mouse enters dropdown menu
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+  };
+
+  const handleDropdownMenuLeave = () => {
+    // Close dropdown when mouse leaves the menu
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150); // Shorter delay when leaving the actual dropdown
   };
 
   const toggleMobileDropdown = (itemLabel) => {
@@ -42,8 +66,8 @@ export const Header = () => {
 
   return (
     <>
-      {/* Fixed Header */}
-      <nav className="fixed top-0 left-0 right-0 bg-white  z-50 px-4 sm:px-8 lg:px-[50px] lg:pr-[60px] py-3 flex justify-between items-center">
+      {/* Header */}
+      <nav className="bg-white z-50 px-4 sm:px-8 lg:px-[50px] lg:pr-[60px] py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <img 
@@ -76,7 +100,11 @@ export const Header = () => {
                       />
                     </button>
                     {isDropdownOpen && item.dropdownItems && (
-                      <div className="absolute top-full mt-2 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50">
+                      <div 
+                        className="absolute top-full mt-1 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50"
+                        onMouseEnter={handleDropdownMenuEnter}
+                        onMouseLeave={handleDropdownMenuLeave}
+                      >
                         {item.dropdownItems.map((dropdownItem) => (
                           <a
                             key={dropdownItem.label}
@@ -108,12 +136,24 @@ export const Header = () => {
           
           {/* Desktop Auth Buttons */}
           <div className="flex items-center gap-3">
-            <button className="px-5 py-2.5 text-orange-500 rounded-lg text-sm font-medium bg-white border border-orange-200 hover:bg-orange-50 cursor-pointer transition-colors font-inter">
+            <a className="px-5 py-2.5 text-orange-500 rounded-lg text-sm font-medium bg-white border border-orange-200 hover:bg-orange-50 cursor-pointer transition-colors font-inter"
+            href="http://app.sirtifai.com/">
               Login
-            </button>
-            <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
+
+            </a>
+            {/* <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
               Sign Up
             </button>
+
+            </button> */}
+          {
+            /*
+              <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
+              Sign Up
+            </button>
+            */
+          }
+
           </div>
         </div>
 
@@ -209,9 +249,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* Spacer to prevent content from going under fixed header */}
-      <div className="h-[72px] sm:h-[78px] lg:h-[102px]" />
     </>
   );
 };
