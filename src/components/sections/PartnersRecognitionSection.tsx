@@ -73,6 +73,7 @@ export const PartnersRecognitionSection = () => {
         </div>
 
         {/* MEMBERSHIP & RECOGNITION Section */}
+ 
         <div className="text-center relative z-10">
 
           <div className="flex justify-center">
@@ -100,7 +101,6 @@ export const PartnersRecognitionSection = () => {
                         {cert.name}
                       </div>
                     </div>
-
                   </div>
                 ))}
               </div>
