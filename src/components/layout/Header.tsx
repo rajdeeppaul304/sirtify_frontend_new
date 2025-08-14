@@ -143,9 +143,9 @@ export const Header = () => {
             </a>
             {/* <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
               Sign Up
-            </button> */}
-
             </button>
+
+            </button> */}
           {
             /*
               <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
