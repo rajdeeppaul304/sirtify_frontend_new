@@ -1,6 +1,60 @@
 import { Facebook, Twitter, Youtube, Mail, Phone, MessageCircle, HelpCircle } from 'lucide-react';
+import { useEffect } from 'react';
 
 export const Footer = () => {
+useEffect(() => {
+    // Knock Knock widget loader
+    const kkId = 'knock-knock-widget';
+    if (!document.getElementById(kkId)) {
+      (window as any).company_id = '6896e165537c28a8a9cbddb9';
+      const script = document.createElement('script');
+      script.id = kkId;
+      script.src = 'https://api.knock-knockapp.com/widget/widget.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, []);
+
+useEffect(() => {
+
+  
+
+  const scriptId = 'sj-widget';
+
+  if (!document.getElementById(scriptId)) {
+    const rC: string[] = [];
+    const elements = document.querySelectorAll('[class*="stjr-"]');
+    elements.forEach(el => {
+      el.classList.forEach(cl => {
+        if (/^stjr-/.test(cl)) {
+          rC.push(cl);
+        }
+      });
+    });
+
+    const uRC = [...new Set(rC)];
+
+    const js = document.createElement('script');
+    js.id = scriptId;
+    js.src =
+      'https://www.sitejabber.com/js/v2/689457ff46956/widgets.js' +
+      (uRC.length ? '?widget-classes=' + uRC.join('|') : '?widget-classes=stjr-base');
+
+    js.onload = js.onreadystatechange = function () {
+      if (!this.readyState || this.readyState === 'complete') {
+        // Script loaded
+      }
+    };
+
+    const t = document.getElementsByTagName('script')[0];
+    if (t && t.parentNode) {
+      t.parentNode.insertBefore(js, t);
+    }
+  }
+}, []);
+
+
+
   return (
     <footer className="w-full bg-[#FEF7F1] pt-16 pb-8">
       <div className="w-full relative ">
@@ -103,10 +157,10 @@ export const Footer = () => {
                 <Phone size={16} className="mr-2" />
                 Phone
               </a>
-              <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+              {/* <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
                 <MessageCircle size={16} className="mr-2" />
                 WhatsApp
-              </a>
+              </a> */}
               <a href="#" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
                 <HelpCircle size={16} className="mr-2" />
                 Help Center
@@ -126,12 +180,15 @@ export const Footer = () => {
             </div>
           </div>
         </div>
+        <hr />
+<div className="stjr-badge"></div>
 
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm">
           ©Sirtifai 2025
         </div>
       </div>
+
     </footer>
   );
 };

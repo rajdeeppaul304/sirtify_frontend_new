@@ -12,6 +12,7 @@ import {
   Footer,
 } from "./components";
 import { AboutUs } from "./pages/AboutUs";
+import { MediaCampaign } from "./pages/MediaCampaign";
 
 import CancellationPolicyPage from "./pages/CancellationPolicy";
 import CookiesPolicyPage from "./pages/CookiesPolicy";
@@ -25,6 +26,7 @@ import { ContactUsPage } from "./pages/ContactUsPage";
 import Program from "./pages/Program";
 
 import InsurancePage from "./pages/InsurancePage";
+import { FreelancerPage } from "./pages/FreelancerPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -56,9 +58,13 @@ export default function App() {
     return <LearnersPage />;
   }
 
-  if (currentPath === "/program") {
-    return <Program />;
-  }
+if (currentPath.startsWith("/program")) {
+  // Extract variant from the path
+  const variant = currentPath.split("-")[1] || null;
+
+  return <Program variant_url={variant} />;
+}
+
 
   if (currentPath.startsWith("/program")) {
     return <Program />;
@@ -72,7 +78,10 @@ export default function App() {
     return <CertificationsPage />;
   }
 
-  if (currentPath === "/sirtify-international") {
+  // if (currentPath === "/sirtify-international") {
+  //   return <SirtifyInternationalPage />;
+  // }
+  if (currentPath === "/international") {
     return <SirtifyInternationalPage />;
   }
 
@@ -96,9 +105,22 @@ export default function App() {
     return <RefundPolicyPage />;
   }
 
+
+  if (currentPath === "/media-and-campaign") {
+    return <MediaCampaign />;
+  }
+
+
+
   if (currentPath === "/insurance") {
     return <InsurancePage />;
   }
+  
+  if (currentPath === "/freelancer") {
+    return <FreelancerPage />;
+  }
+
+
 
   // Default landing page
   return (

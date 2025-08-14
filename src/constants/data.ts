@@ -17,65 +17,59 @@ import type {
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
-  { label: "About", href: "/about" },
+  // { label: "About", href: "/about" },
+  {
+    label: "About",
+    href: "/about",
+    hasDropdown: true,
+    dropdownItems: [
 
-  { label: "Programs", href: "/program" },
+      { label: "Why Sirtifai ", href: "/about" },
+      // { label: "media and campaigns", href: "/media-and-campaign" },
+      { label: "Insurance", href: "/insurance" },
+
+    ],
+  },
+
   {
     label: "Program",
     href: "/program",
     hasDropdown: true,
     dropdownItems: [
-      { label: "International", href: "/sirtify-international" },
-      { label: "Freelancer", href: "/freelancer" },
-      { label: "SPP", href: "/spp" },
-    ],
-  },
 
+      { label: "International ", href: "/international" },
+      { label: "Freelancer ", href: "/program-practice" },
+      { label: "Spp", href: "/program-progress" },
+
+    ],
+
+
+  },
   { label: "Learners", href: "/learners" },
   { label: "Certifications", href: "/certifications" },
   {
     label: "More",
     href: "#",
     hasDropdown: true,
-
     dropdownItems: [
-
-      { label: "Blog", href: "#blog" },
-      { label: "Careers", href: "#careers" },
-      { label: "Sirtify International", href: "/sirtify-international" },
-      { label: "Contact Us", href: "/contact" },
-
       // { label: "Blog", href: "#blog" },
       // { label: "Careers", href: "#careers" },
       // { label:"Certifcations",  href:"/certifications"},
-      // { label:"Insurance",  href:"/insurance"},
+      { label: "Insurance", href: "/insurance" },
       // { label:"Media and Campaign",  href:"/media-and-campaign"},
       // { label:"Freelancer",  href:"/freelancer"},
-      { label: "Sirtify International", href: "/sirtify-international" },
+      // { label: "Sirtify International", href: "/sirtify-international" },
       { label: "Contact Us", href: "/contact" },
-      // { label: "FAQ", href: "/faq" },
-
+      // { label: "FAQ", href: "/faq" },         
     ],
-
-              dropdownItems: [
-            // { label: "Blog", href: "#blog" },
-            // { label: "Careers", href: "#careers" },
-            // { label:"Certifcations",  href:"/certifications"},
-            { label:"Insurance",  href:"/insurance"},
-            // { label:"Media and Campaign",  href:"/media-and-campaign"},
-            // { label:"Freelancer",  href:"/freelancer"},
-            { label: "Sirtify International", href: "/sirtify-international" },
-            { label: "Contact Us", href: "/contact" },
-            // { label: "FAQ", href: "/faq" },         
-           ],
 
 
   },
 ];
 
 export const SPP_OPTIONS: SPPOption[] = [
-  { id: "spp-int", label: "SPP Int", href: "#spp-int" },
-  { id: "spp-freelance", label: "SPP Freelance", href: "#spp-freelance" },
+  { id: "spp-int", label: "International", href: "#spp-int" },
+  { id: "spp-freelance", label: "Freelance", href: "#spp-freelance" },
   { id: "spp-student", label: "SPP Student", href: "#spp-student" },
 ];
 
@@ -109,7 +103,7 @@ export const STEPS: Step[] = [
   {
     id: 2,
     title: "Paid Practice",
-    description: "Analyze your performance and create gorgeous report",
+    description: "Analyze your performance and create goegeous report",
     icon: Settings,
   },
   {
@@ -164,76 +158,138 @@ export const PROGRAM_TRACKS: ProgramTrack[] = [
 
 export const SUCCESS_STORIES: SuccessStory[] = [
   {
-    id: "rajesh-kumar",
-    name: "Rajesh Kumar",
-    quote:
-      "From a small town in India to working as a senior developer in Berlin. Sirtifai made my international career possible.",
-    designation: "SPP International Graduate",
-    location: "Germany",
-    image: "/assets/success.jpg",
+    id: "rahul-gupta",
+    name: "Rahul Gupta",
+    quote: "Unlike other bootcamps, SPP's practice phase actually paid me ₹18K monthly while I built real projects. Got hired without applying to a single job!",
+    designation: "Full Stack Developer",
+    company: "Wipro",
+    rating: 5.0,
+    salary: "₹12L",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "sneha-patel",
+    name: "Sneha Patel",
+    quote: "The lifetime support is incredible. Even after 2 years, SPP helped me switch to a better role with 40% salary hike. Best investment I ever made.",
+    designation: "Data Scientist",
+    company: "Accenture",
+    rating: 5.0,
+    salary: "₹15L",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "amit-kumar",
+    name: "Amit Kumar",
+    quote: "NSF certification and portfolio-based hiring worked perfectly. Employers were impressed with my real project experience from the practice phase.",
+    designation: "UI/UX Designer",
+    company: "Infosys",
+    rating: 5.0,
+    salary: "₹10L",
+    image: "/assets/learners/l.png",
   },
   {
     id: "priya-sharma",
     name: "Priya Sharma",
-    quote:
-      "As a mother returning to work, the Domestic Freelancer program gave me flexibility and steady income while updating my skills.",
-    designation: "SPP Domestic Freelancer",
-    location: "India",
-    image: "/assets/success.jpg",
+    quote: "From a small town in India to working as a senior developer in Berlin. Sirtifai made my international career possible with their comprehensive training.",
+    designation: "Senior Developer",
+    company: "TechCorp Berlin",
+    rating: 5.0,
+    salary: "€65K",
+    image: "/assets/learners/l.png",
   },
   {
     id: "vijay-reddy",
     name: "Vijay Reddy",
-    quote:
-      "Started in my final year of college, now working at a tech giant in Singapore. The portfolio I built during SPP got me the job.",
-    designation: "SPP Freshers Track Graduate",
-    location: "Singapore",
-    image: "/assets/success.jpg",
+    quote: "Started in my final year of college, now working at a tech giant in Singapore. The portfolio I built during SPP got me the job.",
+    designation: "Software Engineer",
+    company: "Google Singapore",
+    rating: 5.0,
+    salary: "S$85K",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "anita-desai",
+    name: "Anita Desai",
+    quote: "The freelancer program gave me the flexibility I needed as a working mother. I now earn ₹25K monthly while managing my family responsibilities.",
+    designation: "Frontend Developer",
+    company: "Freelancer",
+    rating: 5.0,
+    salary: "₹25K/month",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "rajesh-kumar",
+    name: "Rajesh Kumar",
+    quote: "SPP's international program opened doors I never thought possible. Now working in Canada with a salary that changed my family's life forever.",
+    designation: "DevOps Engineer",
+    company: "Shopify Canada",
+    rating: 5.0,
+    salary: "C$95K",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "meera-patel",
+    name: "Meera Patel",
+    quote: "The certification program was rigorous but worth it. I got hired at Microsoft within 3 months of completing the course.",
+    designation: "Cloud Architect",
+    company: "Microsoft",
+    rating: 5.0,
+    salary: "₹35L",
+    image: "/assets/learners/l.png",
+  },
+  {
+    id: "suresh-verma",
+    name: "Suresh Verma",
+    quote: "As a career switcher from mechanical engineering to software development, SPP provided the perfect foundation. Now working at Amazon!",
+    designation: "Backend Developer",
+    company: "Amazon",
+    rating: 5.0,
+    salary: "₹28L",
+    image: "/assets/learners/l.png",
   },
 ];
 
 export const CERTIFICATIONS = [
   {
-    id: "aws",
-    name: "aws",
-    logo: "/assets/cert1.png",
+    id: "deel",
+    name: "deel",
+    logo: "/assets/home/deel.png",
     color: "text-black",
   },
   {
-    id: "cloudera",
-    name: "CLOUDERA",
-    logo: "/assets/cert2.png",
-    color: "text-orange-500",
+    id: "walmart",
+    name: "walmart",
+    logo: "/assets/home/walmart.png",
+    color: "text-black",
   },
   {
-    id: "uipath",
-    name: "UiPath",
-    logo: "/assets/cert3.png",
-    color: "text-orange-500",
+    id: "amazon",
+    name: "amazon",
+    logo: "/assets/home/amazon.png",
+    color: "text-black",
   },
   {
-    id: "blueprism",
-    name: "blueprism",
-    logo: "/assets/cert4.png",
-    color: "text-blue-600",
+    id: "apple",
+    name: "apple",
+    logo: "/assets/home/apple.png",
+    color: "text-black",
   },
 ];
 
 export const ACADEMIC_PARTNERS = [
   {
-    id: "aws-academic",
-    name: "aws",
-    logo: "/assets/cert1.svg",
+    id: "nus",
+    name: "NUS",
+    logo: "/assets/home/nus.png",
     color: "text-black",
   },
   {
-    id: "cloudera-academic",
-    name: "CLOUDERA",
-    logo: "/assets/cert2.png",
+    id: "harvard",
+    name: "Harvard",
+    logo: "/assets/home/harvard.png",
     color: "text-orange-500",
   },
 ];
-
 
 export const MEMBERSHIP_RECOGNITION = [
   {
@@ -259,6 +315,5 @@ export const MEMBERSHIP_RECOGNITION = [
     name: "BBB",
     logo: "/assets/home/bbb.png",
     color: "text-black",
-  },
+  }
 ];
-

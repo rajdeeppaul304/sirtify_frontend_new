@@ -28,6 +28,8 @@ import PartnerLogo4 from "../../assets/Company logo (4).svg";
 import PartnerLogo5 from "../../assets/Company logo (5).svg";
 import PartnerLogo6 from "../../assets/Company logo (6).svg";
 
+import UniversityPartners from "./UniversityPartners";
+
 import MissionVisionGoals from './MissionVisionGoals'; 
 import UpcomingProjectsHero from './UpcomingProjects'; 
 import TeamMemberCarousel from './TeamMember'; 
@@ -74,14 +76,14 @@ export const AboutUsPage = () => {
                   href="#spp-int"
                   className="text-sm text-orange-600 font-medium"
                 >
-                  SPP Int
+                  International
                 </a>
                 <span className="text-gray-300">|</span>
                 <a
                   href="#spp-freelance"
                   className="text-sm text-orange-600 font-medium"
                 >
-                  SPP Freelance
+                  Freelance
                 </a>
                 <span className="text-gray-300">|</span>
                 <a
@@ -158,7 +160,7 @@ export const AboutUsPage = () => {
           {/* Copy */}
           <div>
             <p className="tracking-[0.4em] text-xs text-orange-600 font-semibold mb-2">
-              A BIT
+              ABOUT
             </p>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Why Sertifai
@@ -184,14 +186,14 @@ export const AboutUsPage = () => {
                 Trusted by employers and universities in India, MENA, and SEA.
               </li>
             </ul>
-            <div className="mt-6 flex items-center gap-4">
+            {/* <div className="mt-6 flex items-center gap-4">
               <Button variant="primary" size="md">
                 View More
               </Button>
               <button className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
                 <ArrowRight size={18} />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -284,7 +286,7 @@ export const AboutUsPage = () => {
           desc: "Earn ₹12K–₹35K/month during the Practice Phase.",
         },
         {
-          title: "Verified Payroll (Peario™)",
+          title: "Verified Payroll (DEEL™)",
           desc: "EPF/ESI coverage for domestic plans, and international payroll for overseas roles.",
         },
         {
@@ -326,7 +328,9 @@ export const AboutUsPage = () => {
 
 <UpcomingProjectsHero/>
 
-<TeamMemberCarousel/>
+{/* <TeamMemberCarousel/> */}
+
+<UniversityPartners/>
 
 <CareerSection/>
 

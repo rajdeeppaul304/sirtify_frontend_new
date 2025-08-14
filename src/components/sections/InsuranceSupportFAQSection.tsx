@@ -47,7 +47,7 @@ export const InsuranceSupportFAQSection = () => {
               </div>
 
               {/* Phone Support */}
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-[#FE7642]" />
                 </div>
@@ -56,7 +56,7 @@ export const InsuranceSupportFAQSection = () => {
                   <p className="text-gray-500 text-sm mb-2">For urgent claims and inquiries</p>
                   <span className="text-gray-700 font-medium">+91 9876543210</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
