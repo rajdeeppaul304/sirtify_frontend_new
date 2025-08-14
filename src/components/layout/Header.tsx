@@ -139,10 +139,21 @@ export const Header = () => {
             <a className="px-5 py-2.5 text-orange-500 rounded-lg text-sm font-medium bg-white border border-orange-200 hover:bg-orange-50 cursor-pointer transition-colors font-inter"
             href="http://app.sirtifai.com/">
               Login
+
             </a>
             {/* <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
               Sign Up
             </button> */}
+
+            </button>
+          {
+            /*
+              <button className="p-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors font-inter w-[80px] h-[39px] hover:shadow-xl">
+              Sign Up
+            </button>
+            */
+          }
+
           </div>
         </div>
 

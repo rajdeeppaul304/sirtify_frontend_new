@@ -1,28 +1,28 @@
 import React from "react";
 
-import PartnerLogo0 from "../../assets/Company logo.svg";
-import PartnerLogo1 from "../../assets/Company logo (1).svg";
-import PartnerLogo2 from "../../assets/Company logo (2).svg";
-import PartnerLogo3 from "../../assets/Company logo (3).svg";
-import PartnerLogo4 from "../../assets/Company logo (4).svg";
-import PartnerLogo5 from "../../assets/Company logo (5).svg";
-import PartnerLogo6 from "../../assets/Company logo (6).svg";
+// import PartnerLogo0 from "../../assets/Company logo.svg";
+// import PartnerLogo1 from "../../assets/Company logo (1).svg";
+// import PartnerLogo2 from "../../assets/Company logo (2).svg";
+// import PartnerLogo3 from "../../assets/Company logo (3).svg";
+// import PartnerLogo4 from "../../assets/Company logo (4).svg";
+// import PartnerLogo5 from "../../assets/Company logo (5).svg";
+// import PartnerLogo6 from "../../assets/Company logo (6).svg";
 
 export default function PartnersAndCTA() {
-  const logos = [
-    PartnerLogo0,
-    PartnerLogo1,
-    PartnerLogo2,
-    PartnerLogo3,
-    PartnerLogo4,
-    PartnerLogo5,
-    PartnerLogo6,
-  ];
+  // const logos = [
+  //   PartnerLogo0,
+  //   PartnerLogo1,
+  //   PartnerLogo2,
+  //   PartnerLogo3,
+  //   PartnerLogo4,
+  //   PartnerLogo5,
+  //   PartnerLogo6,
+  // ];
 
   return (
     <div className="bg-white">
       {/* Marquee Section */}
-      <div className="overflow-hidden whitespace-nowrap py-8 bg-white border-b border-gray-100">
+      {/* <div className="overflow-hidden whitespace-nowrap py-8 bg-white border-b border-gray-100">
         <div className="inline-flex animate-marquee space-x-12">
           {logos.concat(logos).map((src, i) => (
             <div
@@ -37,7 +37,7 @@ export default function PartnersAndCTA() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* CTA Section */}
       <div className="bg-[#FF6F3C] text-white py-8 px-30 flex flex-col md:flex-row items-center justify-between gap-6">
