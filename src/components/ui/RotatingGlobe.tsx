@@ -174,7 +174,7 @@ export const RotatingGlobe = () => {
     <div className="relative">
       <canvas
         ref={canvasRef}
-        className="w-[500px] h-[500px] object-contain"
+        className="w-[500px] h-[350px] sm:w-[500px] sm:h-[500px] object-contain"
       />
     </div>
   );
