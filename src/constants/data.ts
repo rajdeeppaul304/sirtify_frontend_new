@@ -25,8 +25,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     dropdownItems: [
 
       { label: "Why Sirtifai ", href: "/about" },
-      { label: "media and campaigns", href: "/media-and-campaign" },
-      { label: "insurance", href: "/insurance" },
+      // { label: "media and campaigns", href: "/media-and-campaign" },
+      { label: "Insurance", href: "/insurance" },
 
     ],
   },
@@ -68,8 +68,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 ];
 
 export const SPP_OPTIONS: SPPOption[] = [
-  { id: "spp-int", label: "SPP Int", href: "#spp-int" },
-  { id: "spp-freelance", label: "SPP Freelance", href: "#spp-freelance" },
+  { id: "spp-int", label: "International", href: "#spp-int" },
+  { id: "spp-freelance", label: "Freelance", href: "#spp-freelance" },
   { id: "spp-student", label: "SPP Student", href: "#spp-student" },
 ];
 

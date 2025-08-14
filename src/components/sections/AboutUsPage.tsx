@@ -76,14 +76,14 @@ export const AboutUsPage = () => {
                   href="#spp-int"
                   className="text-sm text-orange-600 font-medium"
                 >
-                  SPP Int
+                  International
                 </a>
                 <span className="text-gray-300">|</span>
                 <a
                   href="#spp-freelance"
                   className="text-sm text-orange-600 font-medium"
                 >
-                  SPP Freelance
+                  Freelance
                 </a>
                 <span className="text-gray-300">|</span>
                 <a
@@ -160,7 +160,7 @@ export const AboutUsPage = () => {
           {/* Copy */}
           <div>
             <p className="tracking-[0.4em] text-xs text-orange-600 font-semibold mb-2">
-              A BIT
+              ABOUT
             </p>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Why Sertifai
@@ -328,7 +328,7 @@ export const AboutUsPage = () => {
 
 <UpcomingProjectsHero/>
 
-<TeamMemberCarousel/>
+{/* <TeamMemberCarousel/> */}
 
 <UniversityPartners/>
 
