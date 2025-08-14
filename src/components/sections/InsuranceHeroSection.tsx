@@ -41,12 +41,12 @@ export const InsuranceHeroSection = () => {
       </style>
 
       {/* Insurance Hero Section */}
-      <section className="w-full flex justify-between items-start  overflow-hidden relative px-6 py-14">
-        {/* Left Side - Text Content */}
-        <div className="relative w-full lg:max-w-[620px] px-4 xl:px-0 z-10">
+      <section className="w-full flex justify-between items-start  overflow-hidden relative px-6 py-4">
+        {/* Left Side - Content */}
+        <div className="flex-1 max-w-22xl pr-2 pt-6">
           {/* Heading */}
-          <h1 className="font-sans font-medium text-[3.5rem] leading-[1.1] tracking-tight text-[#0F0F0F]">
-            Your Career. YourEarnings. Fully Protected.
+          <h1 className="font-sans font-medium text-[5.3rem] leading-[1.1] tracking-tight text-[#0F0F0F]">
+            Your Career. Your Earnings. <br /> Fully Protected.
             <span className="inline-block align-middle ml-2">
               <img
                 src={star}
@@ -57,24 +57,34 @@ export const InsuranceHeroSection = () => {
           </h1>
 
           {/* Paragraph */}
-          <p className="mt-6 text-[#4B5563] font-sans font-normal text-[1.35rem] leading-relaxed max-w-[800px]">
+          <p className="mt-6 text-[#4B5563] font-sans font-normal text-[1.5rem] leading-relaxed max-w-[900px]">
             We understand the importance of security in your career journey. Our comprehensive insurance coverage ensures your skills, earnings, and career progression are protected at every step.
           </p>
 
           {/* Call-to-Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-20">
-            <button className="double-border-btn">
+
+          {/* commmenting for now  */}
+
+          
+          {/* <div className="flex flex-col sm:flex-row gap-4 mt-20">
+            <button className="double-border-btn relative group hover:opacity-50 hover:cursor-pointer transition-all duration-300">
               Check Your Coverage
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                🚫 Coming Soon 
+              </span>
             </button>
-            <button className="px-8 py-4 bg-[#FE7642] text-white rounded-full text-base font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+            <button className="px-8 py-4 bg-[#FE7642] text-white rounded-full text-base font-semibold hover:bg-gray-400 hover:cursor-pointer transition-all duration-300 shadow-lg relative group">
               File A Claim
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                🚫 Coming Soon 
+              </span>
             </button>
-          </div>
+          </div> */}
         </div>
 
 
         {/* Right Side - Insurance Image with Diagonal Split */}
-        <div className="relative lg:w-[600px] h-[600px] flex-shrink-0">
+        <div className="relative lg:w-[700px] h-[500px] flex-shrink-0">
           {/* Main insurance image - already cropped */}
           <div className="relative w-full h-full overflow-hidden">
             <img
