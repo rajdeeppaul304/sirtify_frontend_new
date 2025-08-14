@@ -186,14 +186,14 @@ export const AboutUsPage = () => {
                 Trusted by employers and universities in India, MENA, and SEA.
               </li>
             </ul>
-            <div className="mt-6 flex items-center gap-4">
+            {/* <div className="mt-6 flex items-center gap-4">
               <Button variant="primary" size="md">
                 View More
               </Button>
               <button className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center">
                 <ArrowRight size={18} />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

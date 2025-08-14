@@ -65,7 +65,7 @@ export default function SuccessGallery() {
         {/* Bottom Navigation */}
         <div className="flex items-center justify-center gap-4">
           <Button className="bg-[#ff7847] hover:bg-[#e56a3f] text-white px-8 py-3 rounded-full">Explore Gallery</Button>
-          <Button variant="outline" size="icon" className="rounded-full border-gray-300 bg-transparent">
+          <Button variant="outline" className="w-10 h-10 rounded-full border-gray-300 bg-transparent p-0">
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
