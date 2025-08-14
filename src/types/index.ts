@@ -43,6 +43,8 @@ export interface SuccessStory {
   name: string;
   quote: string;
   designation: string;
-  location: string;
+  company: string;
+  rating: number;
+  salary: string;
   image: string;
 }

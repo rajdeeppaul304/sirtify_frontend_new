@@ -72,7 +72,10 @@ if (currentPath.startsWith("/program")) {
     return <CertificationsPage />;
   }
 
-  if (currentPath === "/sirtify-international") {
+  // if (currentPath === "/sirtify-international") {
+  //   return <SirtifyInternationalPage />;
+  // }
+  if (currentPath === "/international") {
     return <SirtifyInternationalPage />;
   }
 

@@ -17,12 +17,12 @@ export const InsuranceCTASection = () => {
           
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-8 py-4 bg-white text-[#FE7642] rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3">
+            {/* <button className="px-8 py-4 bg-white text-[#FE7642] rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3">
               Take Career Quiz
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </button> */}
             
-            <button className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-full text-lg font-semibold hover:bg-white hover:text-[#FE7642] transition-all duration-300 hover:scale-105 flex items-center gap-3">
+            <button className="px-8 py-4 bg-white text-[#FE7642] rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-3 cursor-pointer">
               Join SPP Now
               <ArrowRight className="w-5 h-5" />
             </button>
